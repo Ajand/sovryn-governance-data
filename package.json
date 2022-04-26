@@ -12,5 +12,8 @@
   ],
   "devDependencies": {
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "ethers": "^5.6.4"
   }
 }

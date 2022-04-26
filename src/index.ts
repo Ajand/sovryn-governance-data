@@ -1,1 +1,3 @@
-export { sayHello, sayGoodbye } from "./hello-world";
+import GovernanceData from "./GovernanceData";
+
+export default GovernanceData;

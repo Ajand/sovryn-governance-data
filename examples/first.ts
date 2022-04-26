@@ -1,5 +1,5 @@
-import { sayHello, sayGoodbye } from '../src'
+import GovernanceData from "../src";
 
-sayHello()
+const governanceData = new GovernanceData();
 
-sayGoodbye()
+console.log(governanceData.provider);

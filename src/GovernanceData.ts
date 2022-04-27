@@ -1,5 +1,10 @@
 import { ethers } from "ethers";
-import { LocalStorage, ContractsAddresses, ContractData } from "./types";
+import {
+  LocalStorage,
+  ContractsAddresses,
+  ContractData,
+  OnChangeCallback,
+} from "./types";
 
 import MainnetAddresses from "./MainnetAddresses";
 import BProPriceFeed from "./Contracts/BProPriceFeed/BProPriceFeed";
@@ -13,6 +18,8 @@ class GovernanceData {
 
   bProPriceFeed: BProPriceFeed;
 
+  onChangeCallback: OnChangeCallback;
+
   constructor(
     localStorage: LocalStorage,
     rpcUrl: string = "https://public-node.rsk.co",
@@ -23,8 +30,8 @@ class GovernanceData {
     this.contractsAddresses = contractsAddresses;
     this.bProPriceFeed = new BProPriceFeed(
       "BPro PriceFeed",
-      this.provider,
-      this.contractsAddresses.priceFeeds.bProPriceFeed
+      this.contractsAddresses.priceFeeds.bProPriceFeed,
+      this
     );
   }
 
@@ -36,6 +43,14 @@ class GovernanceData {
         params: this.bProPriceFeed.getParams(),
       },
     ];
+  }
+
+  onChange(callback: OnChangeCallback) {
+    this.onChangeCallback = callback;
+  }
+
+  change() {
+    this.onChangeCallback(this.getData());
   }
 }
 

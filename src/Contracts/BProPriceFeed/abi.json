@@ -1,0 +1,36 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "mocStateAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "mocStateAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "changerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SetMoCStateAddress",
+    "type": "event"
+  }
+]

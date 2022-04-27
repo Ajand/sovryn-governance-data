@@ -10,6 +10,7 @@ import MainnetAddresses from "./MainnetAddresses";
 
 import BProPriceFeed from "./Contracts/BProPriceFeed/BProPriceFeed";
 import PriceFeedRSKOracle from "./Contracts/PriceFeedRSKOracle/PriceFeedRSKOracle";
+import PriceFeedsMoC from "./Contracts/PriceFeedsMoC/PriceFeedsMoC";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -22,6 +23,7 @@ class GovernanceData {
 
   bProPriceFeed: BProPriceFeed;
   priceFeedRSKOracle: PriceFeedRSKOracle;
+  priceFeedsMoC: PriceFeedsMoC;
 
   constructor(
     localStorage: LocalStorage,
@@ -41,21 +43,23 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.priceFeedRSKOracle,
       this
     );
+    this.priceFeedsMoC = new PriceFeedsMoC(
+      "Price Feed MoC (WRBTC)",
+      this.contractsAddresses.priceFeeds.priceFeedsMoC,
+      this
+    );
   }
 
   getData(): ContractData[] {
     return [
-      {
-        contractName: this.bProPriceFeed.contractName,
-        address: this.bProPriceFeed.address,
-        params: this.bProPriceFeed.getParams(),
-      },
-      {
-        contractName: this.priceFeedRSKOracle.contractName,
-        address: this.priceFeedRSKOracle.address,
-        params: this.priceFeedRSKOracle.getParams(),
-      },
-    ];
+      this.bProPriceFeed,
+      this.priceFeedRSKOracle,
+      this.priceFeedsMoC,
+    ].map((contract) => ({
+      contractName: contract.contractName,
+      address: contract.address,
+      params: contract.getParams(),
+    }));
   }
 
   onChange(callback: OnChangeCallback) {

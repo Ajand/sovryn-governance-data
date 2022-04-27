@@ -1,0 +1,70 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "mocOracleAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "mocOracleAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "changerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SetMoCOracleAddress",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "rskOracleAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "changerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SetRSKOracleAddress",
+    "type": "event"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "rskOracleAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

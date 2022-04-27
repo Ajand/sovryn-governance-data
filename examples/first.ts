@@ -1,5 +1,12 @@
 import GovernanceData from "../src";
+import { LocalStorage } from "node-localstorage";
 
-const governanceData = new GovernanceData();
+const localStorage = new LocalStorage("./data");
 
-console.log(governanceData.provider);
+const governanceData = new GovernanceData(localStorage);
+
+governanceData.getData().forEach((data) => console.log(data));
+
+governanceData.onChange((currentData) => {
+  currentData.forEach((data) => console.log(data));
+});

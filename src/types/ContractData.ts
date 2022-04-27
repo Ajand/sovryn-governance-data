@@ -5,7 +5,7 @@ interface ContractParam {
 
 interface ContractData {
   contractName: string;
-  contractAddress: string;
+  address: string;
   params: ContractParam[];
 }
 

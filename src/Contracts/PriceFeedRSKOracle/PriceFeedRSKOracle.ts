@@ -63,7 +63,7 @@ class PriceFeedRSKOracle {
 
   getParams(): ContractParam[] {
     return [
-      { name: "Money on Chain State Address", value: this.rskOracleAddress },
+      { name: "Rootstock Oracle Address", value: this.rskOracleAddress },
     ];
   }
 }

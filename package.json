@@ -11,6 +11,7 @@
     "/dist"
   ],
   "devDependencies": {
+    "node-localstorage": "^2.2.1",
     "typescript": "^4.6.3"
   },
   "dependencies": {

@@ -1,6 +1,7 @@
 interface ContractsAddresses {
   priceFeeds: {
     bProPriceFeed: string;
+    priceFeedRSKOracle: string;
   };
 }
 

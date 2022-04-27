@@ -50,6 +50,7 @@ class BProPriceFeed {
 
   setMoCStateAddress(currMocStateAddress: string) {
     if (this.mocStateAddress !== currMocStateAddress) {
+      this.mocStateAddress = currMocStateAddress
       this.governanceData.change();
       this.localStorage.setItem(
         `${this.contractName}:${this.address}:mocStateAddress`,

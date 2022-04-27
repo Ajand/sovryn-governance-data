@@ -7,18 +7,21 @@ import {
 } from "./types";
 
 import MainnetAddresses from "./MainnetAddresses";
+
 import BProPriceFeed from "./Contracts/BProPriceFeed/BProPriceFeed";
+import PriceFeedRSKOracle from "./Contracts/PriceFeedRSKOracle/PriceFeedRSKOracle";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
 class GovernanceData {
   provider: ethers.providers.Provider;
   localStorage: LocalStorage;
+  onChangeCallback: OnChangeCallback;
+
   contractsAddresses: ContractsAddresses;
 
   bProPriceFeed: BProPriceFeed;
-
-  onChangeCallback: OnChangeCallback;
+  priceFeedRSKOracle: PriceFeedRSKOracle;
 
   constructor(
     localStorage: LocalStorage,
@@ -33,6 +36,11 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.bProPriceFeed,
       this
     );
+    this.priceFeedRSKOracle = new PriceFeedRSKOracle(
+      "WRBTC PriceFeed (RSK)",
+      this.contractsAddresses.priceFeeds.priceFeedRSKOracle,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -41,6 +49,11 @@ class GovernanceData {
         contractName: this.bProPriceFeed.contractName,
         address: this.bProPriceFeed.address,
         params: this.bProPriceFeed.getParams(),
+      },
+      {
+        contractName: this.priceFeedRSKOracle.contractName,
+        address: this.priceFeedRSKOracle.address,
+        params: this.priceFeedRSKOracle.getParams(),
       },
     ];
   }

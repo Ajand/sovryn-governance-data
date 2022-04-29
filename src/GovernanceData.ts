@@ -4,13 +4,16 @@ import {
   ContractsAddresses,
   ContractData,
   OnChangeCallback,
+  TokenList,
 } from "./types";
 
 import MainnetAddresses from "./MainnetAddresses";
+import MainnetTokens from "./MainnetTokens";
 
 import BProPriceFeed from "./Contracts/BProPriceFeed/BProPriceFeed";
 import PriceFeedRSKOracle from "./Contracts/PriceFeedRSKOracle/PriceFeedRSKOracle";
 import PriceFeedsMoC from "./Contracts/PriceFeedsMoC/PriceFeedsMoC";
+import PriceFeeds from "./Contracts/PriceFeeds/PriceFeeds";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -20,19 +23,23 @@ class GovernanceData {
   onChangeCallback: OnChangeCallback;
 
   contractsAddresses: ContractsAddresses;
+  tokenList: TokenList;
 
   bProPriceFeed: BProPriceFeed;
   priceFeedRSKOracle: PriceFeedRSKOracle;
   priceFeedsMoC: PriceFeedsMoC;
+  priceFeeds: PriceFeeds;
 
   constructor(
     localStorage: LocalStorage,
     rpcUrl: string = "https://public-node.rsk.co",
-    contractsAddresses: ContractsAddresses = MainnetAddresses
+    contractsAddresses: ContractsAddresses = MainnetAddresses,
+    tokenList: TokenList = MainnetTokens
   ) {
     this.localStorage = localStorage;
     this.provider = new ethers.providers.JsonRpcProvider(rpcUrl);
     this.contractsAddresses = contractsAddresses;
+    this.tokenList = tokenList;
     this.bProPriceFeed = new BProPriceFeed(
       "BPro PriceFeed",
       this.contractsAddresses.priceFeeds.bProPriceFeed,
@@ -48,6 +55,11 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.priceFeedsMoC,
       this
     );
+    this.priceFeeds = new PriceFeeds(
+      "Price Feeds",
+      this.contractsAddresses.priceFeeds.priceFeeds,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -55,6 +67,7 @@ class GovernanceData {
       this.bProPriceFeed,
       this.priceFeedRSKOracle,
       this.priceFeedsMoC,
+      this.priceFeeds,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

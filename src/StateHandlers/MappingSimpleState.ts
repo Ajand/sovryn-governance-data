@@ -12,26 +12,38 @@ const SingleSimpleState =
     onChange: Function,
     identifier: string,
     stateName: string,
+    keys: any[] = [],
     listener?: ethers.EventFilter
   ): State => {
     var loading = true;
     var value: any = localStorage.getItem(`${contract.address}:${identifier}`)
-      ? localStorage.getItem(`${contract.address}:${identifier}`)
-      : undefined;
+      ? new Map(
+          JSON.parse(localStorage.getItem(`${contract.address}:${identifier}`))
+        )
+      : new Map();
 
-    const setState = (currentState: any) => {
+    const setState = (currentKey: any, currentState: any) => {
       if (value !== currentState) {
-        value = currentState;
+        value.set(currentKey, currentState);
         onChange(returnedValues());
-        localStorage.setItem(`${contract.address}:${identifier}`, currentState);
+        localStorage.setItem(
+          `${contract.address}:${identifier}`,
+          JSON.stringify(Array.from(value.entries()))
+        );
       }
     };
 
-    const fetchState = async () => {
-      const currentState = await contract[identifier]();
-      loading = false;
-      onChange(returnedValues());
-      setState(currentState);
+    const fetchState = async (i = 0) => {
+      const currentKey = keys[i];
+      if (!currentKey) {
+        loading = false;
+      } else {
+        const currentState = await contract[identifier](currentKey);
+
+        onChange(returnedValues());
+        setState(currentKey, currentState);
+        fetchState(i + 1);
+      }
     };
 
     fetchState();

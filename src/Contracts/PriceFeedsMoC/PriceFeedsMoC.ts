@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import abi from "./abi.json";
-import { ContractParam, LocalStorage, SingleState } from "../../types";
+import { ContractParam, LocalStorage, State } from "../../types";
 import GovernanceData from "../../GovernanceData";
 
 import SingleSimpleState from "../../StateHandlers/SingleSimpleState";
@@ -13,8 +13,8 @@ class PriceFeedsMoC {
 
   address: string;
   contractName: string;
-  rskOracleAddress: SingleState;
-  mocOracleAddress: SingleState;
+  rskOracleAddress: State;
+  mocOracleAddress: State;
 
   constructor(
     contractName: string,
@@ -36,7 +36,7 @@ class PriceFeedsMoC {
     );
 
     this.rskOracleAddress = singleSimpleStateCreator(
-      (state: SingleState) => {
+      (state: State) => {
         this.rskOracleAddress = state;
         this.governanceData.change();
       },
@@ -46,7 +46,7 @@ class PriceFeedsMoC {
     );
 
     this.mocOracleAddress = singleSimpleStateCreator(
-      (state: SingleState) => {
+      (state: State) => {
         this.mocOracleAddress = state;
         this.governanceData.change();
       },

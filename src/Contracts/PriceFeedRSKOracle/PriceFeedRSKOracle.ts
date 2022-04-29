@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import abi from "./abi.json";
-import { ContractParam, LocalStorage, SingleState } from "../../types";
+import { ContractParam, LocalStorage, State } from "../../types";
 import GovernanceData from "../../GovernanceData";
 
 import SingleSimpleState from "../../StateHandlers/SingleSimpleState";
@@ -13,7 +13,7 @@ class PriceFeedRSKOracle {
 
   address: string;
   contractName: string;
-  rskOracleAddress: SingleState;
+  rskOracleAddress: State;
 
   constructor(
     contractName: string,
@@ -36,7 +36,7 @@ class PriceFeedRSKOracle {
     );
 
     this.rskOracleAddress = singleSimpleStateCreator(
-      (state: SingleState) => {
+      (state: State) => {
         this.rskOracleAddress = state;
         this.governanceData.change();
       },

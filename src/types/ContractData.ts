@@ -1,6 +1,8 @@
 interface ContractParam {
   name: string;
-  value: string;
+  value: any;
+  loading?: boolean;
+  identifier?: string;
 }
 
 interface ContractData {

@@ -1,7 +1,9 @@
 import { ethers } from "ethers";
 import abi from "./abi.json";
-import { ContractParam, LocalStorage } from "../../types";
+import { ContractParam, LocalStorage, SingleState } from "../../types";
 import GovernanceData from "../../GovernanceData";
+
+import SingleSimpleState from "../../StateHandlers/SingleSimpleState";
 
 class BProPriceFeed {
   localStorage: LocalStorage;
@@ -11,7 +13,7 @@ class BProPriceFeed {
 
   address: string;
   contractName: string;
-  mocStateAddress: string;
+  mocStateAddress: SingleState;
 
   constructor(
     contractName: string,
@@ -27,42 +29,23 @@ class BProPriceFeed {
       abi,
       this.governanceData.provider
     );
-    const cachedMocAddress = this.localStorage.getItem(
-      `${contractName}:${address}:mocStateAddress`
+    const singleSimpleStateCreator = SingleSimpleState(
+      this.localStorage,
+      this.contract
     );
-    this.mocStateAddress = cachedMocAddress ? cachedMocAddress : "Loading";
-    this.fetchMoCStateAddress();
-    this.mocListener();
-  }
-
-  async fetchMoCStateAddress() {
-    const currMocStateAddress = await this.contract.mocStateAddress();
-    this.setMoCStateAddress(currMocStateAddress);
-  }
-
-  mocListener() {
-    const filter = this.contract.filters.SetMoCStateAddress(null, null);
-
-    this.contract.on(filter, () => {
-      this.fetchMoCStateAddress();
-    });
-  }
-
-  setMoCStateAddress(currMocStateAddress: string) {
-    if (this.mocStateAddress !== currMocStateAddress) {
-      this.mocStateAddress = currMocStateAddress
-      this.governanceData.change();
-      this.localStorage.setItem(
-        `${this.contractName}:${this.address}:mocStateAddress`,
-        this.mocStateAddress
-      );
-    }
+    this.mocStateAddress = singleSimpleStateCreator(
+      (state: SingleState) => {
+        this.mocStateAddress = state;
+        this.governanceData.change();
+      },
+      "mocStateAddress",
+      "Money on Chain State Address",
+      this.contract.filters.SetMoCStateAddress(null, null)
+    );
   }
 
   getParams(): ContractParam[] {
-    return [
-      { name: "Money on Chain State Address", value: this.mocStateAddress },
-    ];
+    return [this.mocStateAddress];
   }
 }
 

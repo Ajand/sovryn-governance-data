@@ -41,7 +41,7 @@ class PriceFeedRSKOracle {
         this.governanceData.change();
       },
       "rskOracleAddress",
-      "Money on Chain State Address",
+      "RSK Oracle Address",
       this.contract.filters.SetRSKOracleAddress(null, null)
     );
   }

@@ -4,6 +4,7 @@ interface ContractsAddresses {
     priceFeedRSKOracle: string;
     priceFeedsMoC: string;
     priceFeeds: string;
+    usdtPriceFeed: string;
   };
 }
 

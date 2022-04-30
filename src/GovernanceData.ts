@@ -14,6 +14,7 @@ import BProPriceFeed from "./Contracts/BProPriceFeed/BProPriceFeed";
 import PriceFeedRSKOracle from "./Contracts/PriceFeedRSKOracle/PriceFeedRSKOracle";
 import PriceFeedsMoC from "./Contracts/PriceFeedsMoC/PriceFeedsMoC";
 import PriceFeeds from "./Contracts/PriceFeeds/PriceFeeds";
+import General from "./Contracts/General/General";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -29,6 +30,8 @@ class GovernanceData {
   priceFeedRSKOracle: PriceFeedRSKOracle;
   priceFeedsMoC: PriceFeedsMoC;
   priceFeeds: PriceFeeds;
+  usdtPriceFeed: General;
+  mocState: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -60,6 +63,16 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.priceFeeds,
       this
     );
+    this.usdtPriceFeed = new General(
+      "USDT PriceFeed",
+      this.contractsAddresses.priceFeeds.priceFeeds,
+      this
+    );
+    this.mocState = new General(
+      "MoC State",
+      this.contractsAddresses.priceFeeds.priceFeeds,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -68,6 +81,8 @@ class GovernanceData {
       this.priceFeedRSKOracle,
       this.priceFeedsMoC,
       this.priceFeeds,
+      this.usdtPriceFeed,
+      this.mocState,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

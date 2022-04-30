@@ -15,6 +15,13 @@ interface ContractsAddresses {
     closing: string;
   };
 
+  tokens: {
+    docToken: string;
+    wrbtc: string;
+    usdt: string;
+    bpro: string;
+  };
+
   misc: {
     swapsImpl: string;
     swapExternal: string;

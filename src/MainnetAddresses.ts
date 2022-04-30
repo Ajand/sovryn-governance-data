@@ -13,11 +13,17 @@ const MainnetAddresses: ContractsAddresses = {
     settings: "0x62d4Ba66721fd14007a1C49290ea4BE005b1c0b8",
     opening: "0xc51d22C296746202527509BE68f949cf8C72f2Bf",
     maintenance: "0x7CFbAA1017a419AeFd1240b24E8D781cE62FE3D8",
-    closing: "0x49EcdCCC0b52f306307168DC765e904a739F4770"
+    closing: "0x49EcdCCC0b52f306307168DC765e904a739F4770",
+  },
+  tokens: {
+    docToken: "0xe700691da7b9851f2f35f8b8182c69c53ccad9db",
+    wrbtc: "0x542fDA317318eBF1d3DEAf76E0b632741A7e677d",
+    usdt: "0xEf213441a85DF4d7acBdAe0Cf78004E1e486BB96",
+    bpro: "0x440cd83c160de5c96ddb20246815ea44c7abbca8",
   },
   misc: {
     swapsImpl: "0xf515b17624A89c8d71E06D587eCd68f60E5Ca2C8",
-    swapExternal: "0x9b75DbF670774451639CBc0E6F5792D8AB4f72E2"
+    swapExternal: "0x9b75DbF670774451639CBc0E6F5792D8AB4f72E2",
   },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",

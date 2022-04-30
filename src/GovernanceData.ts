@@ -39,6 +39,11 @@ class GovernanceData {
   loanMaintenance: General;
   loanClosing: General;
 
+  docToken: General;
+  wrbtc: General;
+  usdt: General;
+  bpro: General;
+
   swapsImp: General;
   swapExternal: General;
 
@@ -117,6 +122,19 @@ class GovernanceData {
       this.contractsAddresses.misc.swapExternal,
       this
     );
+
+    this.docToken = new General(
+      "DoC Token",
+      this.contractsAddresses.tokens.docToken,
+      this
+    );
+    this.wrbtc = new General(
+      "WRBTC",
+      this.contractsAddresses.tokens.wrbtc,
+      this
+    );
+    this.usdt = new General("USDT", this.contractsAddresses.tokens.usdt, this);
+    this.bpro = new General("BPRO", this.contractsAddresses.tokens.bpro, this);
   }
 
   getData(): ContractData[] {
@@ -134,6 +152,10 @@ class GovernanceData {
       this.loanMaintenance,
       this.loanClosing,
       this.swapExternal,
+      this.docToken,
+      this.wrbtc,
+      this.usdt,
+      this.bpro,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

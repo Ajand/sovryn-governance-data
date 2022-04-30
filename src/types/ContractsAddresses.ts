@@ -17,6 +17,7 @@ interface ContractsAddresses {
 
   misc: {
     swapsImpl: string;
+    swapExternal: string;
   };
 
   protocol: {

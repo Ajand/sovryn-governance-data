@@ -17,6 +17,7 @@ const MainnetAddresses: ContractsAddresses = {
   },
   misc: {
     swapsImpl: "0xf515b17624A89c8d71E06D587eCd68f60E5Ca2C8",
+    swapExternal: "0x9b75DbF670774451639CBc0E6F5792D8AB4f72E2"
   },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",

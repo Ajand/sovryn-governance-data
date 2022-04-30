@@ -32,6 +32,7 @@ class GovernanceData {
   priceFeeds: PriceFeeds;
   usdtPriceFeed: General;
   mocState: General;
+  swapsImp: General
 
   constructor(
     localStorage: LocalStorage,
@@ -73,6 +74,12 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.priceFeeds,
       this
     );
+    this.swapsImp = new General(
+      "SwapsImpl",
+      this.contractsAddresses.priceFeeds.priceFeeds,
+      this
+    );
+
   }
 
   getData(): ContractData[] {
@@ -83,6 +90,7 @@ class GovernanceData {
       this.priceFeeds,
       this.usdtPriceFeed,
       this.mocState,
+      this.swapsImp
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

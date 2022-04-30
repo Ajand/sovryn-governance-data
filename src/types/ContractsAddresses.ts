@@ -6,6 +6,10 @@ interface ContractsAddresses {
     priceFeeds: string;
     usdtPriceFeed: string;
   };
+
+  misc: {
+    swapsImpl: string;
+  };
 }
 
 export { ContractsAddresses };

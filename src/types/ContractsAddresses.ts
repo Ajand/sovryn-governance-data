@@ -9,8 +9,11 @@ interface ContractsAddresses {
   };
 
   loan: {
-    settings: string
-  }
+    settings: string;
+    opening: string;
+    maintenance: string;
+    closing: string;
+  };
 
   misc: {
     swapsImpl: string;
@@ -18,8 +21,8 @@ interface ContractsAddresses {
 
   protocol: {
     sovryn: string;
-    settings: string
-  }
+    settings: string;
+  };
 }
 
 export { ContractsAddresses };

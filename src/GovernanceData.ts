@@ -35,6 +35,9 @@ class GovernanceData {
   swapsImp: General;
   protocolSettings: General;
   loanSettings: General;
+  loanOpening: General;
+  loanMaintenance: General;
+  loanClosing: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -91,6 +94,21 @@ class GovernanceData {
       this.contractsAddresses.loan.settings,
       this
     );
+    this.loanOpening = new General(
+      "LoanOpening",
+      this.contractsAddresses.loan.opening,
+      this
+    );
+    this.loanMaintenance = new General(
+      "LoanOpening",
+      this.contractsAddresses.loan.maintenance,
+      this
+    );
+    this.loanClosing = new General(
+      "LoanOpening",
+      this.contractsAddresses.loan.closing,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -104,6 +122,7 @@ class GovernanceData {
       this.swapsImp,
       this.protocolSettings,
       this.loanSettings,
+      this.loanOpening,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

@@ -9,6 +9,9 @@ const MainnetAddresses: ContractsAddresses = {
     usdtPriceFeed: "0xed80ccde8baeff2dbfc70d3028a27e501fa0d7d5",
     mocState: "0xb9C42EFc8ec54490a37cA91c423F7285Fa01e257"
   },
+  loan: {
+    settings: "0x62d4Ba66721fd14007a1C49290ea4BE005b1c0b8"
+  },
   misc: {
     swapsImpl: "0xf515b17624A89c8d71E06D587eCd68f60E5Ca2C8",
   },

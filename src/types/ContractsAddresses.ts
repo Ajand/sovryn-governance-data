@@ -8,6 +8,10 @@ interface ContractsAddresses {
     mocState: string;
   };
 
+  loan: {
+    settings: string
+  }
+
   misc: {
     swapsImpl: string;
   };

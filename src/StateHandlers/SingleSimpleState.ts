@@ -28,10 +28,14 @@ const SingleSimpleState =
     };
 
     const fetchState = async () => {
-      const currentState = await contract[identifier]();
+      try {
+        const currentState = await contract[identifier]();
+        setState(currentState);
+      } catch (err) {
+        console.log(err);
+      }
       loading = false;
       onChange(returnedValues());
-      setState(currentState);
     };
 
     fetchState();

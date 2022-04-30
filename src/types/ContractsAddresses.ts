@@ -5,11 +5,17 @@ interface ContractsAddresses {
     priceFeedsMoC: string;
     priceFeeds: string;
     usdtPriceFeed: string;
+    mocState: string;
   };
 
   misc: {
     swapsImpl: string;
   };
+
+  protocol: {
+    sovryn: string;
+    settings: string
+  }
 }
 
 export { ContractsAddresses };

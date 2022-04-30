@@ -38,10 +38,14 @@ const SingleSimpleState =
       if (!currentKey) {
         loading = false;
       } else {
-        const currentState = await contract[identifier](currentKey);
+        try {
+          const currentState = await contract[identifier](currentKey);
+          onChange(returnedValues());
+          setState(currentKey, currentState);
+        } catch (err) {
+          console.log(err);
+        }
 
-        onChange(returnedValues());
-        setState(currentKey, currentState);
         fetchState(i + 1);
       }
     };

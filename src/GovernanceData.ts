@@ -32,7 +32,8 @@ class GovernanceData {
   priceFeeds: PriceFeeds;
   usdtPriceFeed: General;
   mocState: General;
-  swapsImp: General
+  swapsImp: General;
+  settings: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -66,20 +67,24 @@ class GovernanceData {
     );
     this.usdtPriceFeed = new General(
       "USDT PriceFeed",
-      this.contractsAddresses.priceFeeds.priceFeeds,
+      this.contractsAddresses.priceFeeds.usdtPriceFeed,
       this
     );
     this.mocState = new General(
       "MoC State",
-      this.contractsAddresses.priceFeeds.priceFeeds,
+      this.contractsAddresses.priceFeeds.mocState,
       this
     );
     this.swapsImp = new General(
       "SwapsImpl",
-      this.contractsAddresses.priceFeeds.priceFeeds,
+      this.contractsAddresses.misc.swapsImpl,
       this
     );
-
+    this.settings = new General(
+      "ProtocolSettings",
+      this.contractsAddresses.protocol.settings,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -90,7 +95,8 @@ class GovernanceData {
       this.priceFeeds,
       this.usdtPriceFeed,
       this.mocState,
-      this.swapsImp
+      this.swapsImp,
+      this.settings,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

@@ -90,6 +90,10 @@ class GovernanceData {
   ///
   xusdSwapConverter: General;
   xusdPoolToken: General;
+  ///
+  fishSwapConverter: General;
+  fishPoolToken: General;
+
 
   constructor(
     localStorage: LocalStorage,
@@ -326,6 +330,17 @@ class GovernanceData {
       this.contractsAddresses.swaps.xusd.pool,
       this
     );
+
+    this.fishSwapConverter = new General(
+      "FISH Swap Converter",
+      this.contractsAddresses.swaps.fish.converter,
+      this
+    );
+    this.fishPoolToken = new General(
+      "FISH Pool Share Token",
+      this.contractsAddresses.swaps.fish.pool,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -380,6 +395,8 @@ class GovernanceData {
       this.bnbPoolToken,
       this.xusdSwapConverter,
       this.xusdPoolToken,
+      this.fishSwapConverter,
+      this.fishPoolToken,
 
     ].map((contract) => ({
       contractName: contract.contractName,

@@ -71,6 +71,10 @@ class GovernanceData {
   usdtSwapConverter: General;
   usdtUsdtPoolShareToken: General;
   usdtBtcPoolShareToken: General;
+  ///
+  bproSwapConverter: General;
+  bproBproPoolShareToken: General;
+  bproBtcPoolShareToken: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -236,6 +240,22 @@ class GovernanceData {
       this.contractsAddresses.swaps.usdt.btcPool,
       this
     );
+
+    this.bproSwapConverter = new General(
+      "BPro Swap Converter",
+      this.contractsAddresses.swaps.bpro.converter,
+      this
+    );
+    this.bproBproPoolShareToken = new General(
+      "BPro BPro Pool Share Token",
+      this.contractsAddresses.swaps.bpro.bproPool,
+      this
+    );
+    this.bproBtcPoolShareToken = new General(
+      "BPro BTC Pool Share Token",
+      this.contractsAddresses.swaps.bpro.btcPool,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -277,6 +297,9 @@ class GovernanceData {
       this.usdtSwapConverter,
       this.usdtUsdtPoolShareToken,
       this.usdtBtcPoolShareToken,
+      this.bproSwapConverter,
+      this.bproBproPoolShareToken,
+      this.bproBtcPoolShareToken,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

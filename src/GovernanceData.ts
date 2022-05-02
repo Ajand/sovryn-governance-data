@@ -61,6 +61,8 @@ class GovernanceData {
   swapsImp: General;
   swapExternal: General;
 
+  swapNetwork: General;
+
   constructor(
     localStorage: LocalStorage,
     rpcUrl: string = "https://public-node.rsk.co",
@@ -183,6 +185,12 @@ class GovernanceData {
     this.bnbs = new General("BNBs", this.contractsAddresses.tokens.bnbs, this);
     this.rif = new General("RIF", this.contractsAddresses.tokens.rif, this);
     this.mynt = new General("MYNT", this.contractsAddresses.tokens.mynt, this);
+
+    this.swapNetwork = new General(
+      "Swap Network ",
+      this.contractsAddresses.swaps.general.swapNetwork,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -216,6 +224,7 @@ class GovernanceData {
       this.bnbs,
       this.rif,
       this.mynt,
+      this.swapNetwork
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

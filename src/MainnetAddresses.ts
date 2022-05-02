@@ -36,6 +36,59 @@ const MainnetAddresses: ContractsAddresses = {
     swapsImpl: "0xf515b17624A89c8d71E06D587eCd68f60E5Ca2C8",
     swapExternal: "0x9b75DbF670774451639CBc0E6F5792D8AB4f72E2",
   },
+  swaps: {
+    general: {
+      swapNetwork: "0x98aCE08D2b759a265ae326F010496bcD63C15afc",
+      rbtcWrapperForAmm: "0xa917BF723433d020a15629eba71f6C2a6B38e52d",
+    },
+    doc: {
+      converter: "0xd715192612F03D20BaE53a5054aF530C9Bb0fA3f",
+      docPool: "0x2dC80332C19Fbcd5169aB4A579D87EE006cb72c0",
+      btcPool: "0x840437bDe7346EC13b5451417DF50586f4DAf836",
+    },
+    usdt: {
+      converter: "0x448c2474b255576554EeD36c24430ccFac131cE3",
+      usdtPool: "0x40580E31cc14DBf7A0859F38ab36a84262Df821D",
+      btcPool: "0x9c4017d1c04cfa0F97fDc9505e33a0d8aC84817F",
+    },
+    bpro: {
+      converter: "0x26463990196B74aD5644865E4d4567E4A411e065",
+      bproPool: "0x9CE25371426763025C04a9FCd581fbb9E4593475",
+      btcPool: "0x75e327A83aD2BFD53da12EB718fCCFC68Bc57535",
+    },
+    sov: {
+      converter: "0xe76Ea314b32fCf641C6c57f14110c5Baa1e45ff4",
+      pool: "0x09c5faf7723b13434abdf1a65ab1b667bc02a902",
+    },
+    eth: {
+      converter: "0xa57ec11497f45fe86eca50f4f1c9e75c8016a1af",
+      pool: "0xF41Ed702df2B84AcE02772C6a0D8AE46465aA5F4",
+    },
+    moc: {
+      converter: "0xe321442DC4793c17F41Fe3fB192a856A4864cEAF",
+      pool: "0x7fef930ebaa90B2f8619722AdC55e3f1d965b79b",
+    },
+    bnb: {
+      converter: "0x1684b871ec5f93de142e79a670b541d75be07ead",
+      pool: "0x8f3d24ab3510294f1466aa105f78901b90d79d4d",
+    },
+    xusd: {
+      converter: "0xa9c3d9681215ef7623dc28ea6b75bf87fdf285d9",
+      pool: "0x6f96096687952349Dd5944e0eb1Be327dcDeb705",
+    },
+    fish: {
+      converter: "0xdeb0894196863dbb2f2d4c683f6d33a2197056b5",
+      pool: "0x35A74a38Fd7728F1c6BC39aE3b18C974b7979ddD",
+    },
+    rif: {
+      converter: "0x65528e06371635a338ca804cd65958a11cb11009",
+      pool: "0xAE66117C8105a65D914fB47d37a127E879244319",
+    },
+    mynt: {
+      converter: "0x3a18e61d9c9f1546dea013478dd653c793098f17",
+      pool: "0x36263AC99ecDcf1aB20513D580B7d8D32D3C439d",
+    },
+  },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",
     settings: "0x61d553223161759361Fe0DF82A993D2415E69984",

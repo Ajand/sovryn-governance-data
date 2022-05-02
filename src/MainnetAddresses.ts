@@ -134,6 +134,44 @@ const MainnetAddresses: ContractsAddresses = {
     genesisHeroTier: "0x7806d3fedf9c9741041f5d70af5adf326705b03d",
     genesisSuperHeroTier: "0xd9bbcd6e0ab105c83e2b5be0bbb9bb90ef963de7",
   },
+
+  bridges: {
+    ethRsk: {
+      ethSide: {
+        bridge: "0x33C0D33a0d4312562ad622F91d12B0AC47366EE1",
+        federation: "0x2493b92b3b958c8d1e93899cae00bfc4854cbd18",
+        multisig: "0x062c74f9d27b1178bb76186c1756128ccb3ccd2e",
+        allowToken: "0x8DF20c2c85Bee0c3DA250dA96D892598C70aA1bE",
+        weth: "0xd412acd34a832a09c80c8a4895ff46d733f09538",
+        eSov: "0xbdab72602e9ad40fc6a6852caf43258113b8f7a5",
+      },
+      rskSide: {
+        bridge: "0x1CcAd820B6d031B41C54f1F3dA11c0d48b399581",
+        federation: "0x99896b7e917ff9c130bb86cde0d778be37e3464c",
+        multisig: "0xB64322e10b5aE1BE121B8Bb0dead560c53d9Dbc3",
+        allowToken: "0xd2090fe759613C3A3E2962c6bB2ad046f62d32fF",
+        ethes: "0xFe878227c8F334038DAb20a99fC3B373fFe0a755",
+      },
+    },
+    bscRsk: {
+      bscSide: {
+        bridge: "0xdfc7127593c8af1a17146893f10e08528f4c2aa7",
+        federation: "0xfc321356bb2ca3d68fafe9515c24c9b23b63a6a6",
+        multisig: "0xec3fabc3517e64e07669dd1d2d673f466f93a328",
+        allowToken: "0x05b68e70168e876b2025f837bc8e0b2312d5327d",
+        wbnb: "0xB6C313a427fa911A4C9a119e80Feea0fe20E69F0",
+        bsov: "0x8753ede1b3a36358e4d7780f384f3f7a2d9e4359",
+      },
+      rskSide: {
+        bridge: "0x971b97c8cc82e7d27bc467c2dc3f219c6ee2e350",
+        federation: "0xc4b5178cc086e764568adfb2daccbb0d973e8132",
+        multisig: "0xee9ea57555d9533d71f6f77e0e480961f068a6c5",
+        allowToken: "0xa2f50a2c699c1aa3b9089f6b565d4999d45d8983",
+        bnbs: "0xd2a826b78200c8434b957913ce4067e6e3169385",
+        ethbs: "0x30d1B36924c2c0CD1c03EC257D7FFf31bD8c3007",
+      },
+    },
+  },
 };
 
 export default MainnetAddresses;

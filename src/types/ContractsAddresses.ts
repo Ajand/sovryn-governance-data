@@ -136,6 +136,44 @@ interface ContractsAddresses {
     genesisHeroTier: string;
     genesisSuperHeroTier: string;
   };
+
+  bridges: {
+    ethRsk: {
+      ethSide: {
+        bridge: string;
+        federation: string;
+        multisig: string;
+        allowToken: string;
+        weth: string;
+        eSov: string;
+      };
+      rskSide: {
+        bridge: string;
+        federation: string;
+        multisig: string;
+        allowToken: string;
+        ethes: string;
+      };
+    };
+    bscRsk: {
+      bscSide: {
+        bridge: string;
+        federation: string;
+        multisig: string;
+        allowToken: string;
+        wbnb: string;
+        bsov: string;
+      };
+      rskSide: {
+        bridge: string;
+        federation: string;
+        multisig: string;
+        allowToken: string;
+        bnbs: string;
+        ethbs: string;
+      };
+    };
+  };
 }
 
 export { ContractsAddresses };

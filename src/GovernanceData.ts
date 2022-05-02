@@ -131,8 +131,34 @@ class GovernanceData {
   genesisCommunityTier: General;
   genesisHeroTier: General;
   genesisSuperHeroTier: General;
-
-
+  ///
+  bridgeRskEthEthSideBridge: General;
+  bridgeRskEthEthSideFederation: General;
+  bridgeRskEthEthSideMultisig: General;
+  bridgeRskEthEthSideAllowToken: General;
+  bridgeRskEthEthSideWeth: General;
+  bridgeRskEthEthSideESov: General;
+  ///
+  bridgeRskEthRskSideBridge: General;
+  bridgeRskEthRskSideFederation: General;
+  bridgeRskEthRskSideMultisig: General;
+  bridgeRskEthRskSideAllowToken: General;
+  bridgeRskEthRskSideETHes: General;
+  ///
+  bridgeRskBscBScSideBridge: General;
+  bridgeRskBscBScSideFederation: General;
+  bridgeRskBscBScSideMultisig: General;
+  bridgeRskBscBScSideAllowToken: General;
+  bridgeRskBscBScSideWbnb: General;
+  bridgeRskBscBScSideBSov: General;
+  ///
+  bridgeRskBSCRskSideBridge: General;
+  bridgeRskBSCRskSideFederation: General;
+  bridgeRskBSCRskSideMultisig: General;
+  bridgeRskBSCRskSideAllowToken: General;
+  bridgeRskBSCRskSideBNBbs: General;
+  bridgeRskBSCRskSideETHbs: General;
+  ///
 
   constructor(
     localStorage: LocalStorage,
@@ -546,6 +572,125 @@ class GovernanceData {
       this.contractsAddresses.multisig.exchequerMultisig,
       this
     );
+    ///
+    this.bridgeRskEthEthSideBridge = new General(
+      "Bridge ETH-RSK, ETH SIDE Bridge",
+      this.contractsAddresses.bridges.ethRsk.ethSide.bridge,
+      this
+    );
+    this.bridgeRskEthEthSideFederation = new General(
+      "Bridge ETH-RSK, ETH SIDE Federation",
+      this.contractsAddresses.bridges.ethRsk.ethSide.federation,
+      this
+    );
+    this.bridgeRskEthEthSideMultisig = new General(
+      "Bridge ETH-RSK, ETH SIDE MultiSig",
+      this.contractsAddresses.bridges.ethRsk.ethSide.multisig,
+      this
+    );
+    this.bridgeRskEthEthSideAllowToken = new General(
+      "Bridge ETH-RSK, ETH SIDE Allow Tokens",
+      this.contractsAddresses.bridges.ethRsk.ethSide.allowToken,
+      this
+    );
+    this.bridgeRskEthEthSideWeth = new General(
+      "Bridge ETH-RSK, ETH SIDE Weth",
+      this.contractsAddresses.bridges.ethRsk.ethSide.weth,
+      this
+    );
+    this.bridgeRskEthEthSideESov = new General(
+      "Bridge ETH-RSK, ETH SIDE ESov",
+      this.contractsAddresses.bridges.ethRsk.ethSide.eSov,
+      this
+    );
+    ///
+    this.bridgeRskEthRskSideBridge = new General(
+      "Bridge ETH-RSK, RSK SIDE Bridge",
+      this.contractsAddresses.bridges.ethRsk.rskSide.bridge,
+      this
+    );
+    this.bridgeRskEthRskSideFederation = new General(
+      "Bridge ETH-RSK, RSK SIDE Federation",
+      this.contractsAddresses.bridges.ethRsk.rskSide.federation,
+      this
+    );
+    this.bridgeRskEthRskSideMultisig = new General(
+      "Bridge ETH-RSK, RSK SIDE MultiSig",
+      this.contractsAddresses.bridges.ethRsk.rskSide.multisig,
+      this
+    );
+    this.bridgeRskEthRskSideAllowToken = new General(
+      "Bridge ETH-RSK, RSK SIDE Allow Tokens",
+      this.contractsAddresses.bridges.ethRsk.rskSide.allowToken,
+      this
+    );
+    this.bridgeRskEthRskSideETHes = new General(
+      "Bridge ETH-RSK, RSK SIDE Weth",
+      this.contractsAddresses.bridges.ethRsk.rskSide.ethes,
+      this
+    );
+    ///
+    this.bridgeRskBscBScSideBridge = new General(
+      "Bridge BSC-RSK, BSC SIDE Bridge",
+      this.contractsAddresses.bridges.bscRsk.bscSide.bridge,
+      this
+    );
+    this.bridgeRskBscBScSideFederation = new General(
+      "Bridge BSC-RSK, BSC SIDE Federation",
+      this.contractsAddresses.bridges.bscRsk.bscSide.federation,
+      this
+    );
+    this.bridgeRskBscBScSideMultisig = new General(
+      "Bridge BSC-RSK, BSC SIDE MultiSig",
+      this.contractsAddresses.bridges.bscRsk.bscSide.multisig,
+      this
+    );
+    this.bridgeRskBscBScSideAllowToken = new General(
+      "Bridge BSC-RSK, BSC SIDE Allow Tokens",
+      this.contractsAddresses.bridges.bscRsk.bscSide.allowToken,
+      this
+    );
+    this.bridgeRskBscBScSideWbnb = new General(
+      "Bridge BSC-RSK, BSC SIDE WBNB",
+      this.contractsAddresses.bridges.bscRsk.bscSide.wbnb,
+      this
+    );
+    this.bridgeRskBscBScSideBSov = new General(
+      "Bridge BSC-RSK, BSC SIDE BSov",
+      this.contractsAddresses.bridges.bscRsk.bscSide.bsov,
+      this
+    );
+    ///
+    this.bridgeRskBSCRskSideBridge = new General(
+      "Bridge BSC-RSK, RSK SIDE Bridge",
+      this.contractsAddresses.bridges.bscRsk.rskSide.bridge,
+      this
+    );
+    this.bridgeRskBSCRskSideFederation = new General(
+      "Bridge BSC-RSK, RSK SIDE Federation",
+      this.contractsAddresses.bridges.bscRsk.rskSide.federation,
+      this
+    );
+    this.bridgeRskBSCRskSideMultisig = new General(
+      "Bridge BSC-RSK, RSK SIDE MultiSig",
+      this.contractsAddresses.bridges.bscRsk.rskSide.multisig,
+      this
+    );
+    this.bridgeRskBSCRskSideAllowToken = new General(
+      "Bridge BSC-RSK, RSK SIDE Allow Tokens",
+      this.contractsAddresses.bridges.bscRsk.rskSide.allowToken,
+      this
+    );
+    this.bridgeRskBSCRskSideBNBbs = new General(
+      "Bridge BSC-RSK, RSK SIDE BNBbs",
+      this.contractsAddresses.bridges.bscRsk.rskSide.bnbs,
+      this
+    );
+    this.bridgeRskBSCRskSideETHbs = new General(
+      "Bridge BSC-RSK, RSK SIDE ETHbs",
+      this.contractsAddresses.bridges.bscRsk.rskSide.ethbs,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -638,7 +783,33 @@ class GovernanceData {
       this.genesisCommunityTier,
       this.genesisHeroTier,
       this.genesisSuperHeroTier,
-
+      //
+      this.bridgeRskEthEthSideBridge,
+      this.bridgeRskEthEthSideFederation,
+      this.bridgeRskEthEthSideMultisig,
+      this.bridgeRskEthEthSideAllowToken,
+      this.bridgeRskEthEthSideWeth,
+      this.bridgeRskEthEthSideESov,
+      //
+      this.bridgeRskEthRskSideBridge,
+      this.bridgeRskEthRskSideFederation,
+      this.bridgeRskEthRskSideMultisig,
+      this.bridgeRskEthRskSideAllowToken,
+      this.bridgeRskEthRskSideETHes,
+      //
+      this.bridgeRskBscBScSideBridge,
+      this.bridgeRskBscBScSideFederation,
+      this.bridgeRskBscBScSideMultisig,
+      this.bridgeRskBscBScSideAllowToken,
+      this.bridgeRskBscBScSideWbnb,
+      this.bridgeRskBscBScSideBSov,
+      //
+      this.bridgeRskBSCRskSideBridge,
+      this.bridgeRskBSCRskSideFederation,
+      this.bridgeRskBSCRskSideMultisig,
+      this.bridgeRskBSCRskSideAllowToken,
+      this.bridgeRskBSCRskSideBNBbs,
+      this.bridgeRskBSCRskSideETHbs,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

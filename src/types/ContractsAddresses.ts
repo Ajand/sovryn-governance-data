@@ -129,6 +129,13 @@ interface ContractsAddresses {
   multisig: {
     exchequerMultisig: string;
   };
+
+  nfts: {
+    oGEarlyAccessToken: string;
+    genesisCommunityTier: string;
+    genesisHeroTier: string;
+    genesisSuperHeroTier: string;
+  };
 }
 
 export { ContractsAddresses };

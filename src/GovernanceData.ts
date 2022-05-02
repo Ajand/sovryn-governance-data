@@ -126,6 +126,13 @@ class GovernanceData {
   swapSettings: General;
   ///
   exchequerMultisig: General;
+  ///
+  oGEarlyAccessToken: General;
+  genesisCommunityTier: General;
+  genesisHeroTier: General;
+  genesisSuperHeroTier: General;
+
+
 
   constructor(
     localStorage: LocalStorage,
@@ -518,6 +525,27 @@ class GovernanceData {
       this.contractsAddresses.multisig.exchequerMultisig,
       this
     );
+    ///
+    this.oGEarlyAccessToken = new General(
+      "OG EarlyAccessToken",
+      this.contractsAddresses.multisig.exchequerMultisig,
+      this
+    );
+    this.genesisCommunityTier = new General(
+      "Genesis Community Tier",
+      this.contractsAddresses.multisig.exchequerMultisig,
+      this
+    );
+    this.genesisHeroTier = new General(
+      "Genesis Hero Tier",
+      this.contractsAddresses.multisig.exchequerMultisig,
+      this
+    );
+    this.genesisSuperHeroTier = new General(
+      "Genesis Super Hero Tier",
+      this.contractsAddresses.multisig.exchequerMultisig,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -605,6 +633,12 @@ class GovernanceData {
       this.swapSettings,
       //
       this.exchequerMultisig,
+      //
+      this.oGEarlyAccessToken,
+      this.genesisCommunityTier,
+      this.genesisHeroTier,
+      this.genesisSuperHeroTier,
+
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

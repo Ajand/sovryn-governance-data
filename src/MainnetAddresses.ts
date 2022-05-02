@@ -127,6 +127,13 @@ const MainnetAddresses: ContractsAddresses = {
   multisig: {
     exchequerMultisig: "0x924f5ad34698Fd20c90Fe5D5A8A0abd3b42dc711",
   },
+
+  nfts: {
+    oGEarlyAccessToken: "0x576aE218aeCfD4CbD2DBe07250b47e26060932B1",
+    genesisCommunityTier: "0x857a62c9c0b6f1211e04275a1f0c5f26fce2021f",
+    genesisHeroTier: "0x7806d3fedf9c9741041f5d70af5adf326705b03d",
+    genesisSuperHeroTier: "0xd9bbcd6e0ab105c83e2b5be0bbb9bb90ef963de7",
+  },
 };
 
 export default MainnetAddresses;

@@ -96,6 +96,9 @@ class GovernanceData {
   ///
   rifSwapConverter: General;
   rifPoolToken: General;
+  ///
+  myntSwapConverter: General;
+  myntPoolToken: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -354,6 +357,18 @@ class GovernanceData {
       this.contractsAddresses.swaps.rif.pool,
       this
     );
+
+
+    this.myntSwapConverter = new General(
+      "MYNT Swap Converter",
+      this.contractsAddresses.swaps.mynt.converter,
+      this
+    );
+    this.myntPoolToken = new General(
+      "MYNT Pool Share Token",
+      this.contractsAddresses.swaps.mynt.pool,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -412,6 +427,8 @@ class GovernanceData {
       this.fishPoolToken,
       this.rifSwapConverter,
       this.rifPoolToken,
+      this.myntSwapConverter,
+      this.myntPoolToken,
 
     ].map((contract) => ({
       contractName: contract.contractName,

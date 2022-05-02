@@ -15,6 +15,7 @@ import PriceFeedRSKOracle from "./Contracts/PriceFeedRSKOracle/PriceFeedRSKOracl
 import PriceFeedsMoC from "./Contracts/PriceFeedsMoC/PriceFeedsMoC";
 import PriceFeeds from "./Contracts/PriceFeeds/PriceFeeds";
 import General from "./Contracts/General/General";
+import Sovryn from "./Contracts/Sovryn/Sovryn";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -25,6 +26,8 @@ class GovernanceData {
 
   contractsAddresses: ContractsAddresses;
   tokenList: TokenList;
+
+  sovryn: Sovryn;
 
   bProPriceFeed: BProPriceFeed;
   priceFeedRSKOracle: PriceFeedRSKOracle;
@@ -135,6 +138,11 @@ class GovernanceData {
     );
     this.usdt = new General("USDT", this.contractsAddresses.tokens.usdt, this);
     this.bpro = new General("BPRO", this.contractsAddresses.tokens.bpro, this);
+    this.sovryn = new Sovryn(
+      "Sovryn Protocol",
+      this.contractsAddresses.protocol.sovryn,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -156,6 +164,7 @@ class GovernanceData {
       this.wrbtc,
       this.usdt,
       this.bpro,
+      this.sovryn,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

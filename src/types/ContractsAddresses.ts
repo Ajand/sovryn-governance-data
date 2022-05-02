@@ -97,6 +97,23 @@ interface ContractsAddresses {
       rif: string;
       mynt: string;
     };
+
+    misc: {
+      contractRegistry: string;
+      converterFactory: string;
+      sovrynSwapFormula: string;
+      conversionPathFinder: string;
+      converterUpgrader: string;
+      converterRegistry: string;
+      converterRegistryData: string;
+      liquidTokenConverterFactory: string;
+      liquidityPoolV1ConverterFactory: string;
+      liquidityPoolV2ConverterFactory: string;
+      liquidityPoolV2ConverterAnchorFactory: string;
+      liquidityPoolV2ConverterCustomFactory: string;
+      oracleWhitelist: string;
+      swapSettings: string;
+    };
   };
 
   misc: {

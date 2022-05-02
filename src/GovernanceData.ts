@@ -109,6 +109,21 @@ class GovernanceData {
   fishOracle: General;
   rifOracle: General;
   myntOracle: General;
+  ///
+  contractRegistry: General;
+  converterFactory: General;
+  sovrynSwapFormula: General;
+  conversionPathFinder: General;
+  converterUpgrader: General;
+  converterRegistry: General;
+  converterRegistryData: General;
+  liquidTokenConverterFactory: General;
+  liquidityPoolV1ConverterFactory: General;
+  liquidityPoolV2ConverterFactory: General;
+  liquidityPoolV2ConverterAnchorFactory: General;
+  liquidityPoolV2ConverterCustomFactory: General;
+  oracleWhitelist: General;
+  swapSettings: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -424,6 +439,77 @@ class GovernanceData {
       this.contractsAddresses.swaps.oracles.mynt,
       this
     );
+    ///
+    this.contractRegistry = new General(
+      "Contract Registry",
+      this.contractsAddresses.swaps.misc.contractRegistry,
+      this
+    );
+    this.converterFactory = new General(
+      "Converter Factory",
+      this.contractsAddresses.swaps.misc.converterFactory,
+      this
+    );
+    this.sovrynSwapFormula = new General(
+      "Sovryn Swap Formula",
+      this.contractsAddresses.swaps.misc.sovrynSwapFormula,
+      this
+    );
+    this.conversionPathFinder = new General(
+      "Conversion Path Finder",
+      this.contractsAddresses.swaps.misc.conversionPathFinder,
+      this
+    );
+    this.converterUpgrader = new General(
+      "Converter Upgrader",
+      this.contractsAddresses.swaps.misc.converterUpgrader,
+      this
+    );
+    this.converterRegistry = new General(
+      "Converter Registry",
+      this.contractsAddresses.swaps.misc.converterRegistry,
+      this
+    );
+    this.converterRegistryData = new General(
+      "Converter Registry Data",
+      this.contractsAddresses.swaps.misc.converterRegistryData,
+      this
+    );
+    this.liquidTokenConverterFactory = new General(
+      "Liquid Token Converter Factory",
+      this.contractsAddresses.swaps.misc.liquidTokenConverterFactory,
+      this
+    );
+    this.liquidityPoolV1ConverterFactory = new General(
+      "Liquid Token Converter Factory",
+      this.contractsAddresses.swaps.misc.liquidityPoolV1ConverterFactory,
+      this
+    );
+    this.liquidityPoolV2ConverterFactory = new General(
+      "Liquidity Pool V2 Converter Factory",
+      this.contractsAddresses.swaps.misc.liquidityPoolV2ConverterFactory,
+      this
+    );
+    this.liquidityPoolV2ConverterAnchorFactory = new General(
+      "Liquidity Pool V2 Converter Anchor Factory",
+      this.contractsAddresses.swaps.misc.liquidityPoolV2ConverterAnchorFactory,
+      this
+    );
+    this.liquidityPoolV2ConverterCustomFactory = new General(
+      "Liquidity Pool V2 Converter Custom Factory",
+      this.contractsAddresses.swaps.misc.liquidityPoolV2ConverterCustomFactory,
+      this
+    );
+    this.oracleWhitelist = new General(
+      "Oracle Whitelist",
+      this.contractsAddresses.swaps.misc.oracleWhitelist,
+      this
+    );
+    this.swapSettings = new General(
+      "Swap Settings",
+      this.contractsAddresses.swaps.misc.swapSettings,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -494,6 +580,21 @@ class GovernanceData {
       this.fishOracle,
       this.rifOracle,
       this.myntOracle,
+      //
+      this.contractRegistry,
+      this.converterFactory,
+      this.sovrynSwapFormula,
+      this.conversionPathFinder,
+      this.converterUpgrader,
+      this.converterRegistry,
+      this.converterRegistryData,
+      this.liquidTokenConverterFactory,
+      this.liquidityPoolV1ConverterFactory,
+      this.liquidityPoolV2ConverterFactory,
+      this.liquidityPoolV2ConverterAnchorFactory,
+      this.liquidityPoolV2ConverterCustomFactory,
+      this.oracleWhitelist,
+      this.swapSettings,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

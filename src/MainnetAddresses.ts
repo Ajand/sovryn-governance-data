@@ -99,6 +99,26 @@ const MainnetAddresses: ContractsAddresses = {
       rif: "0x15e6B67d5bCd57232104A891f466578b28f447D9",
       mynt: "0x1C11180b6730661090634cfD9F2510a1acA26fAf",
     },
+    misc: {
+      contractRegistry: "0x46EBC03EF2277308BdB106a73d11c65109C4B89B",
+      converterFactory: "0xcF46f24423B8da97E2c06B41df28163D55e80935",
+      sovrynSwapFormula: "0x3278734B16F27Ed5C69fD246df9357A866Fd811E",
+      conversionPathFinder: "0xad3376bE8Df32Bb00df4c4402e6662C630167d62",
+      converterUpgrader: "0x40346f7Ce14B3a10bAB22F6a0A444902CF0Bc598",
+      converterRegistry: "0x31A0F8400c75d52FdB413372233F28E3bdFB1c06",
+      converterRegistryData: "0x73eef416cb8B63dBfcc66719F0b74Bb7baEa48Fe",
+      liquidTokenConverterFactory: "0x7cE4b812F4B2115135215FfA48D3b6f60F75cb52",
+      liquidityPoolV1ConverterFactory:
+        "0xD9C68613bd33c3C47235AAb22A7152837ffff453",
+      liquidityPoolV2ConverterFactory:
+        "0x846F005f7587f24822d51B7072906F558EE9FEB5",
+      liquidityPoolV2ConverterAnchorFactory:
+        "0xe93726e74EEF8097E49C1AAB7879F91B95Fa02e8",
+      liquidityPoolV2ConverterCustomFactory:
+        "0x5204E8BAa485F9511be3943Ebea3E4af07bdafEF",
+      oracleWhitelist: "0x8e75774Ef928cE730255AB594dD1b9F0a725a56b",
+      swapSettings: "0x3aB00BEFDd7Bfc0667DE6483D2D3b2F9A74AF2da",
+    },
   },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",

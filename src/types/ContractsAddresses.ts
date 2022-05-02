@@ -125,6 +125,10 @@ interface ContractsAddresses {
     sovryn: string;
     settings: string;
   };
+
+  multisig: {
+    exchequerMultisig: string;
+  };
 }
 
 export { ContractsAddresses };

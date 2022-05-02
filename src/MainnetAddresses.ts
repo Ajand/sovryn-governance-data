@@ -124,6 +124,9 @@ const MainnetAddresses: ContractsAddresses = {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",
     settings: "0x61d553223161759361Fe0DF82A993D2415E69984",
   },
+  multisig: {
+    exchequerMultisig: "0x924f5ad34698Fd20c90Fe5D5A8A0abd3b42dc711",
+  },
 };
 
 export default MainnetAddresses;

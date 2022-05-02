@@ -124,6 +124,8 @@ class GovernanceData {
   liquidityPoolV2ConverterCustomFactory: General;
   oracleWhitelist: General;
   swapSettings: General;
+  ///
+  exchequerMultisig: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -510,6 +512,12 @@ class GovernanceData {
       this.contractsAddresses.swaps.misc.swapSettings,
       this
     );
+    ///
+    this.exchequerMultisig = new General(
+      "Exchequer Multisig",
+      this.contractsAddresses.multisig.exchequerMultisig,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -595,6 +603,8 @@ class GovernanceData {
       this.liquidityPoolV2ConverterCustomFactory,
       this.oracleWhitelist,
       this.swapSettings,
+      //
+      this.exchequerMultisig,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

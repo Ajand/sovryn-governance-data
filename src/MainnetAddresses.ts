@@ -88,6 +88,17 @@ const MainnetAddresses: ContractsAddresses = {
       converter: "0x3a18e61d9c9f1546dea013478dd653c793098f17",
       pool: "0x36263AC99ecDcf1aB20513D580B7d8D32D3C439d",
     },
+    oracles: {
+      bpro: "0xe4D2e26Ce947Df7a8d04E5A9dcDef0c540C497cF",
+      moc: "0xfF7ffCC3d0952C0133D4568C87ef4DeC72E4FddF",
+      sov: "0x4290243b7F3aEF0F6922dAd4F9F8d321ee320fBd",
+      eth: "0x9C9E06a23EE640A20DaAEd58E69012bB0742A098",
+      bnb: "0x57B7B2feeA4ed576e899568F42dF272017E3d8CD",
+      xusd: "0xD08eDf687418dF0107bAbCc8Fcab9064F3A6fc05",
+      fish: "0x95576a065fD880e6C6621dBfAB54FdB9f827C783",
+      rif: "0x15e6B67d5bCd57232104A891f466578b28f447D9",
+      mynt: "0x1C11180b6730661090634cfD9F2510a1acA26fAf",
+    },
   },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",

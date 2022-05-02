@@ -85,6 +85,18 @@ interface ContractsAddresses {
       converter: string;
       pool: string;
     };
+
+    oracles: {
+      bpro: string;
+      moc: string;
+      sov: string;
+      eth: string;
+      bnb: string;
+      xusd: string;
+      fish: string;
+      rif: string;
+      mynt: string;
+    };
   };
 
   misc: {

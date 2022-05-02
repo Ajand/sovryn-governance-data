@@ -99,6 +99,16 @@ class GovernanceData {
   ///
   myntSwapConverter: General;
   myntPoolToken: General;
+  ///
+  bproOracle: General;
+  mocOracle: General;
+  sovOracle: General;
+  ethOracle: General;
+  bnbOracle: General;
+  xusdOracle: General;
+  fishOracle: General;
+  rifOracle: General;
+  myntOracle: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -358,7 +368,6 @@ class GovernanceData {
       this
     );
 
-
     this.myntSwapConverter = new General(
       "MYNT Swap Converter",
       this.contractsAddresses.swaps.mynt.converter,
@@ -367,6 +376,52 @@ class GovernanceData {
     this.myntPoolToken = new General(
       "MYNT Pool Share Token",
       this.contractsAddresses.swaps.mynt.pool,
+      this
+    );
+
+    this.bproOracle = new General(
+      "BPro Oracle",
+      this.contractsAddresses.swaps.oracles.bpro,
+      this
+    );
+    this.mocOracle = new General(
+      "MOC Oracle",
+      this.contractsAddresses.swaps.oracles.moc,
+      this
+    );
+    this.sovOracle = new General(
+      "SOV Oracle",
+      this.contractsAddresses.swaps.oracles.sov,
+      this
+    );
+    this.ethOracle = new General(
+      "ETH Oracle",
+      this.contractsAddresses.swaps.oracles.eth,
+      this
+    );
+    this.bnbOracle = new General(
+      "BNB Oracle",
+      this.contractsAddresses.swaps.oracles.bnb,
+      this
+    );
+    this.xusdOracle = new General(
+      "XUSD Oracle",
+      this.contractsAddresses.swaps.oracles.xusd,
+      this
+    );
+    this.fishOracle = new General(
+      "FISH Oracle",
+      this.contractsAddresses.swaps.oracles.fish,
+      this
+    );
+    this.rifOracle = new General(
+      "RIF Oracle",
+      this.contractsAddresses.swaps.oracles.rif,
+      this
+    );
+    this.myntOracle = new General(
+      "MYNT Oracle",
+      this.contractsAddresses.swaps.oracles.mynt,
       this
     );
   }
@@ -429,7 +484,16 @@ class GovernanceData {
       this.rifPoolToken,
       this.myntSwapConverter,
       this.myntPoolToken,
-
+      this.bproOracle,
+      this.myntPoolToken,
+      this.mocOracle,
+      this.sovOracle,
+      this.ethOracle,
+      this.bnbOracle,
+      this.xusdOracle,
+      this.fishOracle,
+      this.rifOracle,
+      this.myntOracle,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

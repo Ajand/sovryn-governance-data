@@ -50,6 +50,13 @@ class GovernanceData {
   wrbtc: General;
   usdt: General;
   bpro: General;
+  eths: General;
+  moc: General;
+  xusd: General;
+  fish: General;
+  bnbs: General;
+  rif: General;
+  mynt: General;
 
   swapsImp: General;
   swapExternal: General;
@@ -130,18 +137,6 @@ class GovernanceData {
       this
     );
 
-    this.docToken = new General(
-      "DoC Token",
-      this.contractsAddresses.tokens.docToken,
-      this
-    );
-    this.wrbtc = new General(
-      "WRBTC",
-      this.contractsAddresses.tokens.wrbtc,
-      this
-    );
-    this.usdt = new General("USDT", this.contractsAddresses.tokens.usdt, this);
-    this.bpro = new General("BPRO", this.contractsAddresses.tokens.bpro, this);
     this.sovryn = new Sovryn(
       "Sovryn Protocol",
       this.contractsAddresses.protocol.sovryn,
@@ -168,10 +163,31 @@ class GovernanceData {
       this.contractsAddresses.loan.closingBase,
       this
     );
+
+    this.docToken = new General(
+      "DoC Token",
+      this.contractsAddresses.tokens.docToken,
+      this
+    );
+    this.wrbtc = new General(
+      "WRBTC",
+      this.contractsAddresses.tokens.wrbtc,
+      this
+    );
+    this.usdt = new General("USDT", this.contractsAddresses.tokens.usdt, this);
+    this.bpro = new General("BPRO", this.contractsAddresses.tokens.bpro, this);
+    this.eths = new General("ETHs", this.contractsAddresses.tokens.eths, this);
+    this.moc = new General("MOC", this.contractsAddresses.tokens.moc, this);
+    this.xusd = new General("XUSD", this.contractsAddresses.tokens.xusd, this);
+    this.fish = new General("FISH", this.contractsAddresses.tokens.fish, this);
+    this.bnbs = new General("BNBs", this.contractsAddresses.tokens.bnbs, this);
+    this.rif = new General("RIF", this.contractsAddresses.tokens.rif, this);
+    this.mynt = new General("MYNT", this.contractsAddresses.tokens.mynt, this);
   }
 
   getData(): ContractData[] {
     return [
+      this.sovryn,
       this.bProPriceFeed,
       this.priceFeedRSKOracle,
       this.priceFeedsMoC,
@@ -184,16 +200,22 @@ class GovernanceData {
       this.loanOpening,
       this.loanMaintenance,
       this.loanClosing,
+      this.loanClosingLiquidation,
+      this.loanClosingRollover,
+      this.loanClosingWith,
+      this.loanClosingBase,
       this.swapExternal,
       this.docToken,
       this.wrbtc,
       this.usdt,
       this.bpro,
-      this.sovryn,
-      this.loanClosingLiquidation,
-      this.loanClosingRollover,
-      this.loanClosingWith,
-      this.loanClosingBase,
+      this.eths,
+      this.moc,
+      this.xusd,
+      this.fish,
+      this.bnbs,
+      this.rif,
+      this.mynt,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

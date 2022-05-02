@@ -24,6 +24,13 @@ interface ContractsAddresses {
     wrbtc: string;
     usdt: string;
     bpro: string;
+    eths: string;
+    moc: string;
+    xusd: string;
+    fish: string;
+    bnbs: string;
+    rif: string;
+    mynt: string;
   };
 
   misc: {

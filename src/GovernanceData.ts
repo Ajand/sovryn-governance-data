@@ -41,6 +41,10 @@ class GovernanceData {
   loanOpening: General;
   loanMaintenance: General;
   loanClosing: General;
+  loanClosingLiquidation: General;
+  loanClosingRollover: General;
+  loanClosingWith: General;
+  loanClosingBase: General;
 
   docToken: General;
   wrbtc: General;
@@ -143,6 +147,27 @@ class GovernanceData {
       this.contractsAddresses.protocol.sovryn,
       this
     );
+
+    this.loanClosingLiquidation = new General(
+      "LoanClosingsLiquidation",
+      this.contractsAddresses.loan.closingLiquidation,
+      this
+    );
+    this.loanClosingRollover = new General(
+      "LoanClosingsRollover",
+      this.contractsAddresses.loan.closingRollover,
+      this
+    );
+    this.loanClosingWith = new General(
+      "LoanClosingsWith",
+      this.contractsAddresses.loan.closingWith,
+      this
+    );
+    this.loanClosingBase = new General(
+      "LoanClosingsBase",
+      this.contractsAddresses.loan.closingBase,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -165,6 +190,10 @@ class GovernanceData {
       this.usdt,
       this.bpro,
       this.sovryn,
+      this.loanClosingLiquidation,
+      this.loanClosingRollover,
+      this.loanClosingWith,
+      this.loanClosingBase,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

@@ -13,6 +13,10 @@ interface ContractsAddresses {
     opening: string;
     maintenance: string;
     closing: string;
+    closingLiquidation: string;
+    closingRollover: string;
+    closingWith: string;
+    closingBase: string;
   };
 
   tokens: {

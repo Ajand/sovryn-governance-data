@@ -14,6 +14,10 @@ const MainnetAddresses: ContractsAddresses = {
     opening: "0xc51d22C296746202527509BE68f949cf8C72f2Bf",
     maintenance: "0x7CFbAA1017a419AeFd1240b24E8D781cE62FE3D8",
     closing: "0x49EcdCCC0b52f306307168DC765e904a739F4770",
+    closingLiquidation: "0x5a0171d24EB4eC56362430D7d7FB5949a13B0AFA",
+    closingRollover: "0x06593688B3669346Ff0076EE87365F59be1ddcd0",
+    closingWith: "0xD8c5c2F3f6A9EdfAc967d35B68A996B5820ADaC9",
+    closingBase: "0x712C33fde72E8DF893DA603b15f6a342388cEf60",
   },
   tokens: {
     docToken: "0xe700691da7b9851f2f35f8b8182c69c53ccad9db",

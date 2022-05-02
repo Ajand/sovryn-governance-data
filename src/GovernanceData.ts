@@ -84,6 +84,9 @@ class GovernanceData {
   ///
   mocSwapConverter: General;
   mocPoolToken: General;
+  ///
+  bnbSwapConverter: General;
+  bnbPoolToken: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -298,6 +301,17 @@ class GovernanceData {
       this.contractsAddresses.swaps.moc.pool,
       this
     );
+
+    this.bnbSwapConverter = new General(
+      "BNB Swap Converter",
+      this.contractsAddresses.swaps.bnb.converter,
+      this
+    );
+    this.bnbPoolToken = new General(
+      "BNB Pool Share Token",
+      this.contractsAddresses.swaps.bnb.pool,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -348,6 +362,9 @@ class GovernanceData {
       this.ethPoolToken,
       this.mocSwapConverter,
       this.mocPoolToken,
+      this.bnbSwapConverter,
+      this.bnbPoolToken,
+
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

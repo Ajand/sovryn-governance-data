@@ -65,6 +65,7 @@ class GovernanceData {
   rbtcWrapperForAmm: General;
   docSwapConverter: General;
   docDocPoolShareToken: General;
+  docBtcPoolShareToken: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -209,6 +210,11 @@ class GovernanceData {
       this.contractsAddresses.swaps.doc.docPool,
       this
     );
+    this.docBtcPoolShareToken = new General(
+      "DoC BTC Pool Share Token",
+      this.contractsAddresses.swaps.doc.btcPool,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -245,7 +251,8 @@ class GovernanceData {
       this.swapNetwork,
       this.rbtcWrapperForAmm,
       this.docSwapConverter,
-      this.docDocPoolShareToken
+      this.docDocPoolShareToken,
+      this.docBtcPoolShareToken
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

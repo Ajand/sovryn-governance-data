@@ -17,6 +17,8 @@ import PriceFeeds from "./Contracts/PriceFeeds/PriceFeeds";
 import General from "./Contracts/General/General";
 import Sovryn from "./Contracts/Sovryn/Sovryn";
 import LoanToken from "./Contracts/LoanToken/LoanToken";
+import LoanTokenLogicStandard from "./Contracts/LoanTokenLogicStandard/LoanTokenLogicStandard";
+import LoanTokenSettingsLowerAdmin from "./Contracts/LoanTokenSettingLowerAdmin/LoanTokenSettingLowerAdmin";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -175,6 +177,12 @@ class GovernanceData {
   iXUSDLoanToken: LoanToken;
   iXUSDLoanTokenLogicProxy: General;
   ///
+  LoanTokenLogicBeaconLM: General;
+  LoanTokenLogicBeaconWRBTC: General;
+  //
+  LoanTokenLogicLM: LoanTokenLogicStandard;
+  LoanTokenLogicWRBTC: LoanTokenLogicStandard;
+  LoanTokenSettingsLowerAdmin: LoanTokenSettingsLowerAdmin;
 
   constructor(
     localStorage: LocalStorage,
@@ -767,6 +775,33 @@ class GovernanceData {
       this.contractsAddresses.loan.iXUSD.loanTokenLogicProxy,
       this
     );
+    //
+    this.LoanTokenLogicBeaconLM = new General(
+      "Loan Token Logic Beacon LM",
+      this.contractsAddresses.loan.loanTokenLogicBeacon.loanTokenLogicBeaconLM,
+      this
+    );
+    this.LoanTokenLogicBeaconWRBTC = new General(
+      "Loan Token Logic Beacon WRBTC",
+      this.contractsAddresses.loan.loanTokenLogicBeacon.loanTokenLogicBeaconWRBTC,
+      this
+    );
+    //
+    this.LoanTokenLogicLM = new LoanTokenLogicStandard(
+      "Loan Token Logic LM",
+      this.contractsAddresses.loan.loanTokenLogicModule.loanTokenLogicLM,
+      this
+    );
+    this.LoanTokenLogicWRBTC = new LoanTokenLogicStandard(
+      "Loan Token Logic WRBTC",
+      this.contractsAddresses.loan.loanTokenLogicModule.loanTokenLogicWRBTC,
+      this
+    );
+    this.LoanTokenSettingsLowerAdmin = new LoanTokenSettingsLowerAdmin(
+      "Loan Token Settings Lower Admin",
+      this.contractsAddresses.loan.loanTokenLogicModule.loanTokenSettingsLowerAdmin,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -897,6 +932,11 @@ class GovernanceData {
       this.iBPRoLoanTokenLogicProxy,
       this.iXUSDLoanToken,
       this.iXUSDLoanTokenLogicProxy,
+      this.LoanTokenLogicBeaconLM,
+      this.LoanTokenLogicBeaconWRBTC,
+      this.LoanTokenLogicLM,
+      this.LoanTokenLogicWRBTC,
+      this.LoanTokenSettingsLowerAdmin,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

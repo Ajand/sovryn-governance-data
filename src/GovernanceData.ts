@@ -16,6 +16,7 @@ import PriceFeedsMoC from "./Contracts/PriceFeedsMoC/PriceFeedsMoC";
 import PriceFeeds from "./Contracts/PriceFeeds/PriceFeeds";
 import General from "./Contracts/General/General";
 import Sovryn from "./Contracts/Sovryn/Sovryn";
+import LoanToken from "./Contracts/LoanToken/LoanToken";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -158,6 +159,21 @@ class GovernanceData {
   bridgeRskBSCRskSideAllowToken: General;
   bridgeRskBSCRskSideBNBbs: General;
   bridgeRskBSCRskSideETHbs: General;
+  ///
+  iDOCLoanToken: LoanToken;
+  iDOCLoanTokenLogicProxy: General;
+  ///
+  iRBTCLoanToken: LoanToken;
+  iRBTCLoanTokenLogicProxy: General;
+  ///
+  iUSDTLoanToken: LoanToken;
+  iUSDTLoanTokenLogicProxy: General;
+  ///
+  iBPRoLoanToken: LoanToken;
+  iBPRoLoanTokenLogicProxy: General;
+  ///
+  iXUSDLoanToken: LoanToken;
+  iXUSDLoanTokenLogicProxy: General;
   ///
 
   constructor(
@@ -691,11 +707,71 @@ class GovernanceData {
       this.contractsAddresses.bridges.bscRsk.rskSide.ethbs,
       this
     );
+    //
+    this.iDOCLoanToken = new LoanToken(
+      "iDOC Loan Token",
+      this.contractsAddresses.loan.iDOC.loanToken,
+      this,
+      this.contractsAddresses.loan.iDOC.loanTokenLogicProxy
+    );
+    this.iDOCLoanTokenLogicProxy = new General(
+      "iDOC Loan Token Logic Proxy",
+      this.contractsAddresses.loan.iDOC.loanTokenLogicProxy,
+      this
+    );
+    //
+    this.iRBTCLoanToken = new LoanToken(
+      "iRBTC Loan Token",
+      this.contractsAddresses.loan.iRBTC.loanToken,
+      this,
+      this.contractsAddresses.loan.iRBTC.loanTokenLogicProxy
+    );
+    this.iRBTCLoanTokenLogicProxy = new General(
+      "iRBTC Loan Token Logic Proxy",
+      this.contractsAddresses.loan.iRBTC.loanTokenLogicProxy,
+      this
+    );
+    //
+    this.iUSDTLoanToken = new LoanToken(
+      "iUSDT Loan Token",
+      this.contractsAddresses.loan.iUSDT.loanToken,
+      this,
+      this.contractsAddresses.loan.iUSDT.loanTokenLogicProxy
+    );
+    this.iUSDTLoanTokenLogicProxy = new General(
+      "iUSDT Loan Token Logic Proxy",
+      this.contractsAddresses.loan.iUSDT.loanTokenLogicProxy,
+      this
+    );
+    //
+    this.iBPRoLoanToken = new LoanToken(
+      "iBPRo Loan Token",
+      this.contractsAddresses.loan.iBPRo.loanToken,
+      this,
+      this.contractsAddresses.loan.iBPRo.loanTokenLogicProxy
+    );
+    this.iBPRoLoanTokenLogicProxy = new General(
+      "iBPRo Loan Token Logic Proxy",
+      this.contractsAddresses.loan.iBPRo.loanTokenLogicProxy,
+      this
+    );
+    //
+    this.iXUSDLoanToken = new LoanToken(
+      "iXUSD Loan Token",
+      this.contractsAddresses.loan.iXUSD.loanToken,
+      this,
+      this.contractsAddresses.loan.iXUSD.loanTokenLogicProxy
+    );
+    this.iXUSDLoanTokenLogicProxy = new General(
+      "iXUSD Loan Token Logic Proxy",
+      this.contractsAddresses.loan.iXUSD.loanTokenLogicProxy,
+      this
+    );
   }
 
   getData(): ContractData[] {
     return [
-      this.sovryn,
+      /* this.sovryn,
       this.bProPriceFeed,
       this.priceFeedRSKOracle,
       this.priceFeedsMoC,
@@ -809,7 +885,18 @@ class GovernanceData {
       this.bridgeRskBSCRskSideMultisig,
       this.bridgeRskBSCRskSideAllowToken,
       this.bridgeRskBSCRskSideBNBbs,
-      this.bridgeRskBSCRskSideETHbs,
+      this.bridgeRskBSCRskSideETHbs,*/
+      //
+      this.iDOCLoanToken,
+      this.iDOCLoanTokenLogicProxy,
+      this.iRBTCLoanToken,
+      this.iRBTCLoanTokenLogicProxy,
+      this.iUSDTLoanToken,
+      this.iUSDTLoanTokenLogicProxy,
+      this.iBPRoLoanToken,
+      this.iBPRoLoanTokenLogicProxy,
+      this.iXUSDLoanToken,
+      this.iXUSDLoanTokenLogicProxy,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

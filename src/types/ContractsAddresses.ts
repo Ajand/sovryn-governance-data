@@ -17,6 +17,35 @@ interface ContractsAddresses {
     closingRollover: string;
     closingWith: string;
     closingBase: string;
+    iDOC: {
+      loanToken: string;
+      loanTokenLogicProxy: string;
+    };
+    iRBTC: {
+      loanToken: string;
+      loanTokenLogicProxy: string;
+    };
+    iUSDT: {
+      loanToken: string;
+      loanTokenLogicProxy: string;
+    };
+    iBPRo: {
+      loanToken: string;
+      loanTokenLogicProxy: string;
+    };
+    iXUSD: {
+      loanToken: string;
+      loanTokenLogicProxy: string;
+    };
+    loanTokenLogicBeacon: {
+      loanTokenLogicBeaconLM: string;
+      loanTokenLogicBeaconWRBTC: string;
+    };
+    loanTokenLogicModule: {
+      loanTokenLogicLM: string;
+      loanTokenLogicWRBTC: string;
+      loanTokenSettingsLowerAdmin: string;
+    };
   };
 
   tokens: {

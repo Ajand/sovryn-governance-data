@@ -18,6 +18,35 @@ const MainnetAddresses: ContractsAddresses = {
     closingRollover: "0x06593688B3669346Ff0076EE87365F59be1ddcd0",
     closingWith: "0xD8c5c2F3f6A9EdfAc967d35B68A996B5820ADaC9",
     closingBase: "0x712C33fde72E8DF893DA603b15f6a342388cEf60",
+    iDOC: {
+      loanToken: "0xd8D25f03EBbA94E15Df2eD4d6D38276B595593c1",
+      loanTokenLogicProxy: "0x745ED558A88eBA1EB765E6acE70f3d4197f0f9C0",
+    },
+    iRBTC: {
+      loanToken: "0xa9DcDC63eaBb8a2b6f39D7fF9429d88340044a7A",
+      loanTokenLogicProxy: "0x0978f1C6E790dF6157e1E65708F73cCD8a014bbE",
+    },
+    iUSDT: {
+      loanToken: "0x849C47f9C259E9D62F289BF1b2729039698D8387",
+      loanTokenLogicProxy: "0x8567ab78baE6F533e8fd3dc221FD680019f452cc",
+    },
+    iBPRo: {
+      loanToken: "0x6E2fb26a60dA535732F8149b25018C9c0823a715",
+      loanTokenLogicProxy: "0x281B77a694fc76a163c2dE6C91391189591412f3",
+    },
+    iXUSD: {
+      loanToken: "0x8F77ecf69711a4b346f23109c40416BE3dC7f129",
+      loanTokenLogicProxy: "0x4061098838CB4cE2eBa31EE8474A6b3Ccda77Fe1",
+    },
+    loanTokenLogicBeacon: {
+      loanTokenLogicBeaconLM: "0xd7FB11F4b71C6bFE9Db50f3C02c821Af8F616501",
+      loanTokenLogicBeaconWRBTC: "0xF8c5a9B496cDda3A884A9381bF717D8F35d6a86A",
+    },
+    loanTokenLogicModule: {
+      loanTokenLogicLM: "0x2564100636274dCD041a952A80BF20E8D8bD57AE",
+      loanTokenLogicWRBTC: "0x10a3CEc4Ee7B3990C2A01a06516AB6fC5AC40093",
+      loanTokenSettingsLowerAdmin: "0x19F0144b11C2609bB65A6195F6940407463c56e5",
+    },
   },
   tokens: {
     docToken: "0xe700691da7b9851f2f35f8b8182c69c53ccad9db",
@@ -33,8 +62,8 @@ const MainnetAddresses: ContractsAddresses = {
     mynt: "0x2e6B1d146064613E8f521Eb3c6e65070af964EbB",
   },
   misc: {
-    swapsImpl: "0xf515b17624A89c8d71E06D587eCd68f60E5Ca2C8",
-    swapExternal: "0x9b75DbF670774451639CBc0E6F5792D8AB4f72E2",
+    swapsImpl: "0x23bA07E2c3302B517B2cFEea4C5CaDF6a7b946bA",
+    swapExternal: "0x997044915f0540b0b6651d7852Db01968CeA423B",
   },
   swaps: {
     general: {

@@ -217,6 +217,10 @@ interface ContractsAddresses {
     CrowdSale: string;
     CSOV2: string;
   };
+
+  governance2: {
+    Staking: string;
+  }
 }
 
 export { ContractsAddresses };

@@ -19,6 +19,12 @@ const SingleSimpleState =
       ? localStorage.getItem(`${contract.address}:${identifier}`)
       : undefined;
 
+    if (value === "false") {
+      value = false;
+    } else if (value === "true") {
+      value = true;
+    }
+
     const setState = (currentState: any) => {
       if (value !== currentState) {
         value = currentState;

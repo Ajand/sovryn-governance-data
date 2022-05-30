@@ -215,6 +215,10 @@ const MainnetAddresses: ContractsAddresses = {
     CrowdSale: "0xd42070b07D4EAbb801d76c6929f21749647275Ec",
     CSOV2: "0x7f7Dcf9DF951C4A332740e9a125720DA242A34ff",
   },
+
+  governance2: {
+    Staking: "0x5684a06CaB22Db16d901fEe2A5C081b4C91eA40e"
+  }
 };
 
 export default MainnetAddresses;

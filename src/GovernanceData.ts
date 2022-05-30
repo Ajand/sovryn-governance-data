@@ -19,6 +19,7 @@ import Sovryn from "./Contracts/Sovryn/Sovryn";
 import LoanToken from "./Contracts/LoanToken/LoanToken";
 import LoanTokenLogicStandard from "./Contracts/LoanTokenLogicStandard/LoanTokenLogicStandard";
 import LoanTokenSettingsLowerAdmin from "./Contracts/LoanTokenSettingLowerAdmin/LoanTokenSettingLowerAdmin";
+import Staking from "./Contracts/Staking/Staking";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -193,6 +194,8 @@ class GovernanceData {
   GenesisSaleCSOVToken: General;
   GenesisSaleCrowdSale: General;
   GenesisSaleCSOV2: General;
+  //
+  GovernanceTwoStaking: Staking;
 
   constructor(
     localStorage: LocalStorage,
@@ -854,6 +857,12 @@ class GovernanceData {
       this.contractsAddresses.genesisSale.CSOV2,
       this
     );
+    ///
+    this.GovernanceTwoStaking = new Staking(
+      "Governance 2.0 Staking",
+      this.contractsAddresses.governance2.Staking,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -998,7 +1007,9 @@ class GovernanceData {
       ///
       this.GenesisSaleCSOVToken,
       this.GenesisSaleCrowdSale,
-      this.GenesisSaleCSOV2
+      this.GenesisSaleCSOV2,
+      ///
+      this.GovernanceTwoStaking,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

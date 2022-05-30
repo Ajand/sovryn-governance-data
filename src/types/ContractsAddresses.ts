@@ -222,7 +222,24 @@ interface ContractsAddresses {
     Staking: string;
     StakingRewardsProxy: string;
     VestingRegistryProxy: string;
-  }
+    SOV: string;
+    StakingImplementation: string;
+    FeeSharingProxyOld: string;
+    FeeSharingProxy: string;
+    FeeSharingLogic: string;
+    TimelockOwner: string;
+    GovernorOwner: string;
+    GovernorVaultOwner: string;
+    TimelockAdmin: string;
+    GovernorAdmin: string;
+    GovernorVaultAdmin: string;
+    VestingLogic: string;
+    VestingRegistry: string;
+    AdoptionFund: string;
+    DevelopmentFund: string;
+    StakingRewardsLogic: string;
+    VestingCreator: string;
+  };
 }
 
 export { ContractsAddresses };

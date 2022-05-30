@@ -20,7 +20,7 @@ import LoanToken from "./Contracts/LoanToken/LoanToken";
 import LoanTokenLogicStandard from "./Contracts/LoanTokenLogicStandard/LoanTokenLogicStandard";
 import LoanTokenSettingsLowerAdmin from "./Contracts/LoanTokenSettingLowerAdmin/LoanTokenSettingLowerAdmin";
 import Staking from "./Contracts/Staking/Staking";
-import StakingRewards from './Contracts/StakingRewards/StakingRewards';
+import StakingRewards from "./Contracts/StakingRewards/StakingRewards";
 import VestingRegistry from "./Contracts/VestingRegistry/VestingRegistry";
 
 // This is going to be the main entry of the package
@@ -198,10 +198,25 @@ class GovernanceData {
   GenesisSaleCSOV2: General;
   //
   GovernanceTwoStaking: Staking;
-
   StakingRewardsProxy: StakingRewards;
-
   VestingRegistryProxy: VestingRegistry;
+  SOV: General;
+  StakingImplementation: General;
+  FeeSharingProxyOld: General;
+  FeeSharingProxy: General;
+  FeeSharingLogic: General;
+  TimelockOwner: General;
+  GovernorOwner: General;
+  GovernorVaultOwner: General;
+  TimelockAdmin: General;
+  GovernorAdmin: General;
+  GovernorVaultAdmin: General;
+  VestingLogic: General;
+  VestingRegistry: General;
+  AdoptionFund: General;
+  DevelopmentFund: General;
+  StakingRewardsLogic: General;
+  VestingCreator: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -869,16 +884,117 @@ class GovernanceData {
       this.contractsAddresses.governance2.Staking,
       this
     );
-
     this.StakingRewardsProxy = new StakingRewards(
-      "Staking Rewards Proxy",
+      "Governance 2.0 Staking Rewards Proxy",
       this.contractsAddresses.governance2.StakingRewardsProxy,
       this
     );
-
     this.VestingRegistryProxy = new VestingRegistry(
-      "Vesting Registry Proxy",
+      "Governance 2.0 Vesting Registry Proxy",
       this.contractsAddresses.governance2.VestingRegistryProxy,
+      this
+    );
+
+    this.SOV = new General(
+      "Governance 2.0 SOV",
+      this.contractsAddresses.governance2.SOV,
+      this
+    );
+    this.StakingImplementation = new General(
+      "Governance 2.0 Staking Implementation",
+      this.contractsAddresses.governance2.StakingImplementation,
+      this
+    );
+    this.FeeSharingProxyOld = new General(
+      "Governance 2.0 Fee Sharing ProxyOld",
+      this.contractsAddresses.governance2.FeeSharingProxyOld,
+      this
+    );
+    this.FeeSharingProxy = new General(
+      "Governance 2.0 Fee Sharing Proxy",
+      this.contractsAddresses.governance2.FeeSharingProxy,
+      this
+    );
+    this.FeeSharingLogic = new General(
+      "Governance 2.0 Fee Sharing Logic",
+      this.contractsAddresses.governance2.FeeSharingLogic,
+      this
+    );
+    this.TimelockOwner = new General(
+      "Governance 2.0 Timelock Owner",
+      this.contractsAddresses.governance2.TimelockOwner,
+      this
+    );
+    this.GovernorOwner = new General(
+      "Governance 2.0 Governor Owner",
+      this.contractsAddresses.governance2.GovernorOwner,
+      this
+    );
+    this.GovernorVaultOwner = new General(
+      "Governance 2.0 Governor Vault Owner",
+      this.contractsAddresses.governance2.GovernorVaultOwner,
+      this
+    );
+    this.TimelockAdmin = new General(
+      "Governance 2.0 Timelock Admin",
+      this.contractsAddresses.governance2.TimelockAdmin,
+      this
+    );
+    this.GovernorAdmin = new General(
+      "Governance 2.0 Governor Admin",
+      this.contractsAddresses.governance2.GovernorAdmin,
+      this
+    );
+    this.GovernorVaultAdmin = new General(
+      "Governance 2.0 Governor Vault Admin",
+      this.contractsAddresses.governance2.GovernorVaultAdmin,
+      this
+    );
+    this.VestingLogic = new General(
+      "Governance 2.0 Vesting Logic",
+      this.contractsAddresses.governance2.VestingLogic,
+      this
+    );
+    this.VestingRegistry = new General(
+      "Governance 2.0 Vesting Registry",
+      this.contractsAddresses.governance2.VestingRegistry,
+      this
+    );
+    this.GovernorVaultAdmin = new General(
+      "Governance 2.0 GovernorVaultAdmin",
+      this.contractsAddresses.governance2.GovernorVaultAdmin,
+      this
+    );
+    this.VestingLogic = new General(
+      "Governance 2.0 Vesting Logic",
+      this.contractsAddresses.governance2.VestingLogic,
+      this
+    );
+
+    this.VestingRegistry = new General(
+      "Governance 2.0 Vesting Registry",
+      this.contractsAddresses.governance2.VestingRegistry,
+      this
+    );
+
+    this.AdoptionFund = new General(
+      "Governance 2.0 Adoption Fund",
+      this.contractsAddresses.governance2.AdoptionFund,
+      this
+    );
+    this.DevelopmentFund = new General(
+      "Governance 2.0 Development Fund",
+      this.contractsAddresses.governance2.DevelopmentFund,
+      this
+    );
+    this.StakingRewardsLogic = new General(
+      "Governance 2.0 Staking Rewards Logic",
+      this.contractsAddresses.governance2.StakingRewardsLogic,
+      this
+    );
+    this.VestingCreator = new General(
+      "Governance 2.0 Staking Vesting Creator",
+      this.contractsAddresses.governance2.VestingCreator,
       this
     );
   }
@@ -1029,7 +1145,24 @@ class GovernanceData {
       ///
       this.GovernanceTwoStaking,
       this.StakingRewardsProxy,
-      this.VestingRegistryProxy
+      this.VestingRegistryProxy,
+      this.SOV,
+      this.StakingImplementation,
+      this.FeeSharingProxyOld,
+      this.FeeSharingProxy,
+      this.FeeSharingLogic,
+      this.TimelockOwner,
+      this.GovernorOwner,
+      this.GovernorVaultOwner,
+      this.TimelockAdmin,
+      this.GovernorAdmin,
+      this.GovernorVaultAdmin,
+      this.VestingLogic,
+      this.VestingRegistry,
+      this.AdoptionFund,
+      this.DevelopmentFund,
+      this.StakingRewardsLogic,
+      this.VestingCreator
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

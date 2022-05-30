@@ -797,6 +797,7 @@ class GovernanceData {
       this.contractsAddresses.loan.loanTokenLogicModule.loanTokenLogicWRBTC,
       this
     );
+    // TODO change this Loan token logic abis to Loan Token and make the implementations general
     this.LoanTokenSettingsLowerAdmin = new LoanTokenSettingsLowerAdmin(
       "Loan Token Settings Lower Admin",
       this.contractsAddresses.loan.loanTokenLogicModule.loanTokenSettingsLowerAdmin,

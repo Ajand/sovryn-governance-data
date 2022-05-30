@@ -18,6 +18,9 @@ class General {
   governer: State;
   target: State;
   sovrynAddress: State;
+  admin: State;
+  pauser: State;
+  liquidityMiningAddress: State;
 
   constructor(
     contractName: string,
@@ -48,15 +51,41 @@ class General {
       this.contract.filters.OwnershipTransferred(null, null)
     );
     const singleConstantStateCreator = SingleConstantState();
-    this.target = singleConstantStateCreator(
-      "target",
-      "Target",
-      target
+    this.target = singleConstantStateCreator("target", "Target", target);
+    this.admin = singleSimpleStateCreator(
+      (state: State) => {
+        this.admin = state;
+        this.governanceData.change();
+      },
+      "admin",
+      "Admin"
+    );
+    this.pauser = singleSimpleStateCreator(
+      (state: State) => {
+        this.pauser = state;
+        this.governanceData.change();
+      },
+      "pauser",
+      "Pauser"
+    );
+    this.liquidityMiningAddress = singleSimpleStateCreator(
+      (state: State) => {
+        this.liquidityMiningAddress = state;
+        this.governanceData.change();
+      },
+      "liquidityMiningAddress",
+      "Liquidity Mining Address"
     );
   }
 
   getParams(): ContractParam[] {
-    return [this.governer, this.target];
+    return [
+      this.governer,
+      this.target,
+      this.admin,
+      this.pauser,
+      this.liquidityMiningAddress,
+    ];
   }
 }
 

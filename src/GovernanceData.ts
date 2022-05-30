@@ -189,6 +189,10 @@ class GovernanceData {
   GovernanceOneTimelock: General;
   GovernanceOneGovernorVault: General;
   GovernanceOneMultiSigKeyHolders: General;
+  //
+  GenesisSaleCSOVToken: General;
+  GenesisSaleCrowdSale: General;
+  GenesisSaleCSOV2: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -834,6 +838,22 @@ class GovernanceData {
       this.contractsAddresses.governance1.MultiSigKeyHolders,
       this
     );
+    ///
+    this.GenesisSaleCSOVToken = new General(
+      "Genesis Sale CSOV Token",
+      this.contractsAddresses.genesisSale.CSOVToken,
+      this
+    );
+    this.GenesisSaleCrowdSale = new General(
+      "Genesis Sale Crowd Sale",
+      this.contractsAddresses.genesisSale.CrowdSale,
+      this
+    );
+    this.GenesisSaleCSOV2 = new General(
+      "Genesis Sale CSOV2",
+      this.contractsAddresses.genesisSale.CSOV2,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -975,6 +995,10 @@ class GovernanceData {
       this.GovernanceOneTimelock,
       this.GovernanceOneGovernorVault,
       this.GovernanceOneMultiSigKeyHolders,
+      ///
+      this.GenesisSaleCSOVToken,
+      this.GenesisSaleCrowdSale,
+      this.GenesisSaleCSOV2
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

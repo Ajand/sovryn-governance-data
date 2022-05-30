@@ -210,7 +210,13 @@ interface ContractsAddresses {
     timelock: string;
     governorVault: string;
     MultiSigKeyHolders: string;
-  }
+  };
+
+  genesisSale: {
+    CSOVToken: string;
+    CrowdSale: string;
+    CSOV2: string;
+  };
 }
 
 export { ContractsAddresses };

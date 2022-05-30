@@ -207,8 +207,14 @@ const MainnetAddresses: ContractsAddresses = {
     governer: "0xCe3a21a69c05CfE638B722f53593A047bdd6E9De",
     timelock: "0x04cb2eF013F866E9915016E44FE36218361C1F5a",
     governorVault: "0xC7A1637b37190a456b017897207bceb2A29f19b9",
-    MultiSigKeyHolders: "0x1B1656CBEf05522184f833B5ca9405072Daa8416"
-  }
+    MultiSigKeyHolders: "0x1B1656CBEf05522184f833B5ca9405072Daa8416",
+  },
+
+  genesisSale: {
+    CSOVToken: "0x0106F2fFBF6A4f5DEcE323d20E16E2037E732790",
+    CrowdSale: "0xd42070b07D4EAbb801d76c6929f21749647275Ec",
+    CSOV2: "0x7f7Dcf9DF951C4A332740e9a125720DA242A34ff",
+  },
 };
 
 export default MainnetAddresses;

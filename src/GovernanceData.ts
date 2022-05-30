@@ -20,6 +20,7 @@ import LoanToken from "./Contracts/LoanToken/LoanToken";
 import LoanTokenLogicStandard from "./Contracts/LoanTokenLogicStandard/LoanTokenLogicStandard";
 import LoanTokenSettingsLowerAdmin from "./Contracts/LoanTokenSettingLowerAdmin/LoanTokenSettingLowerAdmin";
 import Staking from "./Contracts/Staking/Staking";
+import StakingRewards from './Contracts/StakingRewards/StakingRewards';
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -196,6 +197,8 @@ class GovernanceData {
   GenesisSaleCSOV2: General;
   //
   GovernanceTwoStaking: Staking;
+
+  StakingRewardsProxy: StakingRewards;
 
   constructor(
     localStorage: LocalStorage,
@@ -863,6 +866,12 @@ class GovernanceData {
       this.contractsAddresses.governance2.Staking,
       this
     );
+
+    this.StakingRewardsProxy = new StakingRewards(
+      "Staking Rewards Proxy",
+      this.contractsAddresses.governance2.StakingRewardsProxy,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1010,6 +1019,7 @@ class GovernanceData {
       this.GenesisSaleCSOV2,
       ///
       this.GovernanceTwoStaking,
+      this.StakingRewardsProxy
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

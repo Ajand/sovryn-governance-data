@@ -217,7 +217,8 @@ const MainnetAddresses: ContractsAddresses = {
   },
 
   governance2: {
-    Staking: "0x5684a06CaB22Db16d901fEe2A5C081b4C91eA40e"
+    Staking: "0x5684a06CaB22Db16d901fEe2A5C081b4C91eA40e",
+    StakingRewardsProxy: "0x8304FB3614c728B712e94F9D4DF6719fede6517F"
   }
 };
 

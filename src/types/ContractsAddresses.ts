@@ -220,6 +220,7 @@ interface ContractsAddresses {
 
   governance2: {
     Staking: string;
+    StakingRewardsProxy: string;
   }
 }
 

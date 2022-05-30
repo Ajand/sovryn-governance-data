@@ -183,6 +183,12 @@ class GovernanceData {
   LoanTokenLogicLM: LoanTokenLogicStandard;
   LoanTokenLogicWRBTC: LoanTokenLogicStandard;
   LoanTokenSettingsLowerAdmin: LoanTokenSettingsLowerAdmin;
+  //
+  GovernanceOneNTSOV: General;
+  GovernanceOneGovernor: General;
+  GovernanceOneTimelock: General;
+  GovernanceOneGovernorVault: General;
+  GovernanceOneMultiSigKeyHolders: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -797,10 +803,35 @@ class GovernanceData {
       this.contractsAddresses.loan.loanTokenLogicModule.loanTokenLogicWRBTC,
       this
     );
-    // TODO change this Loan token logic abis to Loan Token and make the implementations general
     this.LoanTokenSettingsLowerAdmin = new LoanTokenSettingsLowerAdmin(
       "Loan Token Settings Lower Admin",
       this.contractsAddresses.loan.loanTokenLogicModule.loanTokenSettingsLowerAdmin,
+      this
+    );
+    //
+    this.GovernanceOneNTSOV = new General(
+      "Governance 1.0 NTSOV",
+      this.contractsAddresses.governance1.NTSOV,
+      this
+    );
+    this.GovernanceOneGovernor = new General(
+      "Governance 1.0 Governor",
+      this.contractsAddresses.governance1.governer,
+      this
+    );
+    this.GovernanceOneTimelock = new General(
+      "Governance 1.0 Timelock",
+      this.contractsAddresses.governance1.timelock,
+      this
+    );
+    this.GovernanceOneGovernorVault = new General(
+      "Governance 1.0 Governor Vault",
+      this.contractsAddresses.governance1.governorVault,
+      this
+    );
+    this.GovernanceOneMultiSigKeyHolders = new General(
+      "Governance 1.0 MultiSig Key Holders",
+      this.contractsAddresses.governance1.MultiSigKeyHolders,
       this
     );
   }
@@ -938,6 +969,12 @@ class GovernanceData {
       this.LoanTokenLogicLM,
       this.LoanTokenLogicWRBTC,
       this.LoanTokenSettingsLowerAdmin,
+      ///
+      this.GovernanceOneNTSOV,
+      this.GovernanceOneGovernor,
+      this.GovernanceOneTimelock,
+      this.GovernanceOneGovernorVault,
+      this.GovernanceOneMultiSigKeyHolders,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

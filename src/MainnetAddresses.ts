@@ -201,6 +201,14 @@ const MainnetAddresses: ContractsAddresses = {
       },
     },
   },
+
+  governance1: {
+    NTSOV: "0xc8cBdb42Ce55bDEe96D6425396e4047eE46F2E37",
+    governer: "0xCe3a21a69c05CfE638B722f53593A047bdd6E9De",
+    timelock: "0x04cb2eF013F866E9915016E44FE36218361C1F5a",
+    governorVault: "0xC7A1637b37190a456b017897207bceb2A29f19b9",
+    MultiSigKeyHolders: "0x1B1656CBEf05522184f833B5ca9405072Daa8416"
+  }
 };
 
 export default MainnetAddresses;

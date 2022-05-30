@@ -203,6 +203,14 @@ interface ContractsAddresses {
       };
     };
   };
+
+  governance1: {
+    NTSOV: string;
+    governer: string;
+    timelock: string;
+    governorVault: string;
+    MultiSigKeyHolders: string;
+  }
 }
 
 export { ContractsAddresses };

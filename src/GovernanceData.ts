@@ -223,6 +223,8 @@ class GovernanceData {
   FastBTCManagedWallet: General;
   ///
   LiquidityMiningLockedSOV: LockedSOV;
+  LiquidityMining: General;
+  LiquidityMiningProxy: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1020,6 +1022,16 @@ class GovernanceData {
       this.contractsAddresses.LiquidityMining.LockedSOV,
       this
     );
+    this.LiquidityMining = new General(
+      "Liquidity Mining Logic",
+      this.contractsAddresses.LiquidityMining.LiquidityMining,
+      this
+    );
+    this.LiquidityMiningProxy = new General(
+      "Liquidity Mining Proxy",
+      this.contractsAddresses.LiquidityMining.LiquidityMiningProxy,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1190,7 +1202,9 @@ class GovernanceData {
       this.FastBTCManagedWallet,
       this.FastBTCMultisig,
       ///
-      this.LiquidityMiningLockedSOV
+      this.LiquidityMiningLockedSOV,
+      this.LiquidityMining,
+      this.LiquidityMiningProxy,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

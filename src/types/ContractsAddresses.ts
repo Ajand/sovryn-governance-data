@@ -1,11 +1,19 @@
 interface ContractsAddresses {
   priceFeeds: {
+    priceFeedsMoC: string;
+    usdtPriceFeed: string;
     bProPriceFeed: string;
     priceFeedRSKOracle: string;
-    priceFeedsMoC: string;
     priceFeeds: string;
-    usdtPriceFeed: string;
     mocState: string;
+    mocPriceFeed: string;
+    sovPriceFeed: string;
+    ethsPriceFeed: string;
+    bnbsPriceFeed: string;
+    xusdPriceFeed: string;
+    fishPriceFeed: string;
+    rifPriceFeed: string;
+    myntPriceFeed: string;
   };
 
   loan: {

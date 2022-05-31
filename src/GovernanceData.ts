@@ -42,6 +42,15 @@ class GovernanceData {
   priceFeeds: PriceFeeds;
   usdtPriceFeed: General;
   mocState: General;
+  mocPriceFeed: General;
+  sovPriceFeed: General;
+  ethsPriceFeed: General;
+  bnbsPriceFeed: General;
+  xusdPriceFeed: General;
+  fishPriceFeed: General;
+  rifPriceFeed: General;
+  myntPriceFeed: General;
+
   protocolSettings: General;
 
   loanSettings: General;
@@ -284,6 +293,47 @@ class GovernanceData {
       this.contractsAddresses.priceFeeds.mocState,
       this
     );
+    this.mocPriceFeed = new General(
+      "MoC Price Feed",
+      this.contractsAddresses.priceFeeds.mocPriceFeed,
+      this
+    );
+    this.sovPriceFeed = new General(
+      "SOV Price Feed",
+      this.contractsAddresses.priceFeeds.sovPriceFeed,
+      this
+    );
+    this.ethsPriceFeed = new General(
+      "ETHs Price Feed",
+      this.contractsAddresses.priceFeeds.ethsPriceFeed,
+      this
+    );
+    this.bnbsPriceFeed = new General(
+      "BNBs Price Feed",
+      this.contractsAddresses.priceFeeds.bnbsPriceFeed,
+      this
+    );
+    this.xusdPriceFeed = new General(
+      "XUSD Price Feed",
+      this.contractsAddresses.priceFeeds.xusdPriceFeed,
+      this
+    );
+    this.fishPriceFeed = new General(
+      "Fish Price Feed",
+      this.contractsAddresses.priceFeeds.fishPriceFeed,
+      this
+    );
+    this.rifPriceFeed = new General(
+      "XUSD Price Feed",
+      this.contractsAddresses.priceFeeds.rifPriceFeed,
+      this
+    );
+    this.myntPriceFeed = new General(
+      "Mynt Price Feed",
+      this.contractsAddresses.priceFeeds.myntPriceFeed,
+      this
+    );
+
     this.swapsImp = new General(
       "SwapsImpl",
       this.contractsAddresses.misc.swapsImpl,
@@ -1132,13 +1182,13 @@ class GovernanceData {
 
   getData(): ContractData[] {
     return [
-      /* this.sovryn,
+      this.sovryn,
       this.bProPriceFeed,
       this.priceFeedRSKOracle,
       this.priceFeedsMoC,
       this.priceFeeds,
       this.usdtPriceFeed,
-      this.mocState,
+      /* this.mocState,
       this.swapsImp,
       this.protocolSettings,
       this.loanSettings,
@@ -1319,6 +1369,15 @@ class GovernanceData {
       this.TapDisabled,
       this.MyntToken,
       this.DAO,
+      ///
+      this.mocPriceFeed,
+      this.sovPriceFeed,
+      this.ethsPriceFeed,
+      this.bnbsPriceFeed,
+      this.xusdPriceFeed,
+      this.fishPriceFeed,
+      this.rifPriceFeed,
+      this.myntPriceFeed,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

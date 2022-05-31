@@ -229,6 +229,20 @@ class GovernanceData {
   AggregatorsXUSD: General;
   AggregatorsEths: General;
   AggregatorsBnbs: General;
+  //
+  MyntACL: General;
+  ACLConfigurator: General;
+  BalanceRedirectPresale: General;
+  BancorFormula: General;
+  Controller: General;
+  Kernel: General;
+  EVMScriptRegistryFactory: General;
+  DAOFactory: General;
+  MarketMaker: General;
+  Reserve: General;
+  TapDisabled: General;
+  MyntToken: General;
+  DAO: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1052,6 +1066,68 @@ class GovernanceData {
       this.contractsAddresses.aggregators.bnbs,
       this
     );
+    //
+    this.MyntACL = new General(
+      "Mynt ACL",
+      this.contractsAddresses.Mynt.ACL,
+      this
+    );
+    this.ACLConfigurator = new General(
+      "Mynt ACL Configurator",
+      this.contractsAddresses.Mynt.ACLConfigurator,
+      this
+    );
+    this.BalanceRedirectPresale = new General(
+      "Mynt Balance Redirect Presale",
+      this.contractsAddresses.Mynt.BalanceRedirectPresale,
+      this
+    );
+    this.BancorFormula = new General(
+      "Mynt Bancor Formula",
+      this.contractsAddresses.Mynt.BancorFormula,
+      this
+    );
+    this.Controller = new General(
+      "Mynt Controller",
+      this.contractsAddresses.Mynt.Controller,
+      this
+    );
+    this.Kernel = new General(
+      "Mynt Kernel",
+      this.contractsAddresses.Mynt.Kernel,
+      this
+    );
+    this.EVMScriptRegistryFactory = new General(
+      "Mynt EVM Script Registry Factory",
+      this.contractsAddresses.Mynt.EVMScriptRegistryFactory,
+      this
+    );
+    this.DAOFactory = new General(
+      "Mynt DAO Factory",
+      this.contractsAddresses.Mynt.DAOFactory,
+      this
+    );
+    this.MarketMaker = new General(
+      "Mynt Market Maker",
+      this.contractsAddresses.Mynt.MarketMaker,
+      this
+    );
+    this.Reserve = new General(
+      "Mynt Reserve",
+      this.contractsAddresses.Mynt.Reserve,
+      this
+    );
+    this.TapDisabled = new General(
+      "Mynt Tap Disabled",
+      this.contractsAddresses.Mynt.TapDisabled,
+      this
+    );
+    this.MyntToken = new General(
+      "Mynt Token",
+      this.contractsAddresses.Mynt.MyntToken,
+      this
+    );
+    this.DAO = new General("Mynt DAO", this.contractsAddresses.Mynt.DAO, this);
   }
 
   getData(): ContractData[] {
@@ -1229,6 +1305,20 @@ class GovernanceData {
       this.AggregatorsXUSD,
       this.AggregatorsEths,
       this.AggregatorsBnbs,
+      ///
+      this.MyntACL,
+      this.ACLConfigurator,
+      this.BalanceRedirectPresale,
+      this.BancorFormula,
+      this.Controller,
+      this.Kernel,
+      this.EVMScriptRegistryFactory,
+      this.DAOFactory,
+      this.MarketMaker,
+      this.Reserve,
+      this.TapDisabled,
+      this.MyntToken,
+      this.DAO,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

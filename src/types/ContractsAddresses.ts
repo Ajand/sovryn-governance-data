@@ -257,6 +257,22 @@ interface ContractsAddresses {
     eths: string;
     bnbs: string;
   };
+
+  Mynt: {
+    ACL: string;
+    ACLConfigurator: string;
+    BalanceRedirectPresale: string;
+    BancorFormula: string;
+    Controller: string;
+    Kernel: string;
+    EVMScriptRegistryFactory: string;
+    DAOFactory: string;
+    MarketMaker: string;
+    Reserve: string;
+    TapDisabled: string;
+    MyntToken: string;
+    DAO: string;
+  };
 }
 
 export { ContractsAddresses };

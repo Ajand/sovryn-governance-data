@@ -225,6 +225,10 @@ class GovernanceData {
   LiquidityMiningLockedSOV: LockedSOV;
   LiquidityMining: General;
   LiquidityMiningProxy: General;
+  ///
+  AggregatorsXUSD: General;
+  AggregatorsEths: General;
+  AggregatorsBnbs: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1032,6 +1036,22 @@ class GovernanceData {
       this.contractsAddresses.LiquidityMining.LiquidityMiningProxy,
       this
     );
+    //
+    this.AggregatorsXUSD = new General(
+      "Aggregators XUSD",
+      this.contractsAddresses.aggregators.xusd,
+      this
+    );
+    this.AggregatorsEths = new General(
+      "Aggregators ETHs",
+      this.contractsAddresses.aggregators.eths,
+      this
+    );
+    this.AggregatorsBnbs = new General(
+      "Aggregators BNBs",
+      this.contractsAddresses.aggregators.bnbs,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1205,6 +1225,10 @@ class GovernanceData {
       this.LiquidityMiningLockedSOV,
       this.LiquidityMining,
       this.LiquidityMiningProxy,
+      ///
+      this.AggregatorsXUSD,
+      this.AggregatorsEths,
+      this.AggregatorsBnbs,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

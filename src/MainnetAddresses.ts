@@ -249,6 +249,12 @@ const MainnetAddresses: ContractsAddresses = {
     LiquidityMining: "0xbD50232e6fbFa43c95062D1a9d6ecf5439906C21",
     LiquidityMiningProxy: "0xf730af26e87D9F55E46A6C447ED2235C385E55e0",
   },
+
+  aggregators: {
+    xusd: "0x1440d19436bEeaF8517896bffB957a88EC95a00F",
+    eths: "0x4bF113905d7F69202106f613308bb02c84aaDF2F",
+    bnbs: "0xafD905Fe2EdBF5A7367A73B0F1e6a62Cb5E27D3e"
+  }
 };
 
 export default MainnetAddresses;

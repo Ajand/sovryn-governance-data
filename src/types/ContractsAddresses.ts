@@ -251,6 +251,12 @@ interface ContractsAddresses {
     LiquidityMining: string;
     LiquidityMiningProxy: string;
   };
+
+  aggregators: {
+    xusd: string;
+    eths: string;
+    bnbs: string;
+  };
 }
 
 export { ContractsAddresses };

@@ -54,6 +54,7 @@ interface ContractsAddresses {
       loanTokenLogicWRBTC: string;
       loanTokenSettingsLowerAdmin: string;
     };
+    affiliates: string;
   };
 
   tokens: {
@@ -156,6 +157,7 @@ interface ContractsAddresses {
   misc: {
     swapsImpl: string;
     swapExternal: string;
+    watcher: string;
   };
 
   protocol: {
@@ -281,6 +283,10 @@ interface ContractsAddresses {
     MyntToken: string;
     DAO: string;
   };
+
+  LimitOrder: {
+    SettlementProxy: string;
+  }
 }
 
 export { ContractsAddresses };

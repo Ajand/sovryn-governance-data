@@ -197,6 +197,8 @@ class GovernanceData {
   LoanTokenLogicWRBTC: LoanTokenLogicStandard;
   LoanTokenSettingsLowerAdmin: LoanTokenSettingsLowerAdmin;
   //
+  Affiliates: General;
+  //
   GovernanceOneNTSOV: General;
   GovernanceOneGovernor: General;
   GovernanceOneTimelock: General;
@@ -252,6 +254,10 @@ class GovernanceData {
   TapDisabled: General;
   MyntToken: General;
   DAO: General;
+  //
+  Watcher: General;
+  //
+  SettlementProxy: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -913,6 +919,12 @@ class GovernanceData {
       this
     );
     //
+    this.Affiliates = new General(
+      "Affiliates",
+      this.contractsAddresses.loan.affiliates,
+      this
+    );
+    //
     this.GovernanceOneNTSOV = new General(
       "Governance 1.0 NTSOV",
       this.contractsAddresses.governance1.NTSOV,
@@ -1178,6 +1190,18 @@ class GovernanceData {
       this
     );
     this.DAO = new General("Mynt DAO", this.contractsAddresses.Mynt.DAO, this);
+    ///
+    this.Watcher = new General(
+      "Watcher",
+      this.contractsAddresses.misc.watcher,
+      this
+    );
+    ///
+    this.SettlementProxy = new General(
+      "Limit Order Settlement Proxy",
+      this.contractsAddresses.LimitOrder.SettlementProxy,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1378,6 +1402,9 @@ class GovernanceData {
       this.fishPriceFeed,
       this.rifPriceFeed,
       this.myntPriceFeed,
+      this.Affiliates,
+      this.Watcher,
+      this.SettlementProxy,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

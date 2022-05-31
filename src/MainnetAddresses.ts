@@ -55,6 +55,7 @@ const MainnetAddresses: ContractsAddresses = {
       loanTokenLogicWRBTC: "0x10a3CEc4Ee7B3990C2A01a06516AB6fC5AC40093",
       loanTokenSettingsLowerAdmin: "0x19F0144b11C2609bB65A6195F6940407463c56e5",
     },
+    affiliates: "0x30bab63262ac59218116fc6278CFe81392657f6B",
   },
   tokens: {
     docToken: "0xe700691da7b9851f2f35f8b8182c69c53ccad9db",
@@ -72,6 +73,7 @@ const MainnetAddresses: ContractsAddresses = {
   misc: {
     swapsImpl: "0x23bA07E2c3302B517B2cFEea4C5CaDF6a7b946bA",
     swapExternal: "0x997044915f0540b0b6651d7852Db01968CeA423B",
+    watcher: "0x051B89f575fCd540F0a6a5B49c75f9a83BB2Cf07",
   },
   swaps: {
     general: {
@@ -159,7 +161,7 @@ const MainnetAddresses: ContractsAddresses = {
   },
   protocol: {
     sovryn: "0x5A0D867e0D70Fcc6Ade25C3F1B89d618b5B4Eaa7",
-    settings: "0x61d553223161759361Fe0DF82A993D2415E69984",
+    settings: "0x1401B5b40759893F5E5D5826Da709E4fE35C438e",
   },
   multisig: {
     exchequerMultisig: "0x924f5ad34698Fd20c90Fe5D5A8A0abd3b42dc711",
@@ -278,6 +280,10 @@ const MainnetAddresses: ContractsAddresses = {
     TapDisabled: "0x76e94fE82Ac0AD412cFD5D24CF02099dCE7919C5",
     MyntToken: "0x2e6B1d146064613E8f521Eb3c6e65070af964EbB",
     DAO: "0x5e6687a03e4c96d7B7e3b9fE96dA1660E7c9A5a7",
+  },
+
+  LimitOrder: {
+    SettlementProxy: "0x913B394E82DfAC26456934c25e4517EE8a8f84D4",
   },
 };
 

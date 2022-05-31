@@ -240,6 +240,11 @@ interface ContractsAddresses {
     StakingRewardsLogic: string;
     VestingCreator: string;
   };
+
+  fastBTC: {
+    Multisig: string;
+    ManagedWallet: string;
+  }
 }
 
 export { ContractsAddresses };

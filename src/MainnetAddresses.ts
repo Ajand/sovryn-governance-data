@@ -237,7 +237,12 @@ const MainnetAddresses: ContractsAddresses = {
     DevelopmentFund: "0x617866cC4a089c3653ddC31a618b078291839AeB",
     StakingRewardsLogic: "0x6CBE8C2dFfb88973E5cC2ff4e732a0D651041215",
     VestingCreator: "0xa003D9F781a498D90f489328612E74Af1027417f",
-  }
+  },
+
+  fastBTC: {
+    Multisig: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
+    ManagedWallet: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
+  },
 };
 
 export default MainnetAddresses;

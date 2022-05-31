@@ -217,6 +217,9 @@ class GovernanceData {
   DevelopmentFund: General;
   StakingRewardsLogic: General;
   VestingCreator: General;
+  ///
+  FastBTCMultisig: General;
+  FastBTCManagedWallet: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -997,6 +1000,17 @@ class GovernanceData {
       this.contractsAddresses.governance2.VestingCreator,
       this
     );
+    ///
+    this.FastBTCMultisig = new General(
+      "FastBTC Multisig",
+      this.contractsAddresses.fastBTC.Multisig,
+      this
+    );
+    this.FastBTCManagedWallet = new General(
+      "FastBTC ManagedWallet",
+      this.contractsAddresses.fastBTC.ManagedWallet,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1162,7 +1176,10 @@ class GovernanceData {
       this.AdoptionFund,
       this.DevelopmentFund,
       this.StakingRewardsLogic,
-      this.VestingCreator
+      this.VestingCreator,
+      //
+      this.FastBTCManagedWallet,
+      this.FastBTCMultisig,
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

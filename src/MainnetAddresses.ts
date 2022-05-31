@@ -243,6 +243,12 @@ const MainnetAddresses: ContractsAddresses = {
     Multisig: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
     ManagedWallet: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
   },
+
+  LiquidityMining: {
+    LockedSOV: "0xB4e4517cA4Edf591Dcafb702999F04f02E57D978",
+    LiquidityMining: "0xbD50232e6fbFa43c95062D1a9d6ecf5439906C21",
+    LiquidityMiningProxy: "0xf730af26e87D9F55E46A6C447ED2235C385E55e0",
+  },
 };
 
 export default MainnetAddresses;

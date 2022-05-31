@@ -244,7 +244,13 @@ interface ContractsAddresses {
   fastBTC: {
     Multisig: string;
     ManagedWallet: string;
-  }
+  };
+
+  LiquidityMining: {
+    LockedSOV: string;
+    LiquidityMining: string;
+    LiquidityMiningProxy: string;
+  };
 }
 
 export { ContractsAddresses };

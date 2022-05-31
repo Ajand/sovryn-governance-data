@@ -22,6 +22,7 @@ import LoanTokenSettingsLowerAdmin from "./Contracts/LoanTokenSettingLowerAdmin/
 import Staking from "./Contracts/Staking/Staking";
 import StakingRewards from "./Contracts/StakingRewards/StakingRewards";
 import VestingRegistry from "./Contracts/VestingRegistry/VestingRegistry";
+import LockedSOV from "./Contracts/LockedSOV/LockedSOV";
 
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
@@ -220,6 +221,8 @@ class GovernanceData {
   ///
   FastBTCMultisig: General;
   FastBTCManagedWallet: General;
+  ///
+  LiquidityMiningLockedSOV: LockedSOV;
 
   constructor(
     localStorage: LocalStorage,
@@ -1011,6 +1014,12 @@ class GovernanceData {
       this.contractsAddresses.fastBTC.ManagedWallet,
       this
     );
+    //
+    this.LiquidityMiningLockedSOV = new LockedSOV(
+      "Liquidity Mining Locked SOV",
+      this.contractsAddresses.LiquidityMining.LockedSOV,
+      this
+    );
   }
 
   getData(): ContractData[] {
@@ -1180,6 +1189,8 @@ class GovernanceData {
       //
       this.FastBTCManagedWallet,
       this.FastBTCMultisig,
+      ///
+      this.LiquidityMiningLockedSOV
     ].map((contract) => ({
       contractName: contract.contractName,
       address: contract.address,

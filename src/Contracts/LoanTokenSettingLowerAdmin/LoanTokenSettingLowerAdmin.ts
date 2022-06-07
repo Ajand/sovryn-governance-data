@@ -13,7 +13,7 @@ class LoanTokenSettingLowerAdmin {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
   admin: State;
   pauser: State;
 
@@ -35,13 +35,13 @@ class LoanTokenSettingLowerAdmin {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
     this.admin = singleSimpleStateCreator(
@@ -63,7 +63,7 @@ class LoanTokenSettingLowerAdmin {
   }
 
   getParams(): ContractParam[] {
-    return [this.governer, this.admin, this.pauser];
+    return [this.governor, this.admin, this.pauser];
   }
 }
 

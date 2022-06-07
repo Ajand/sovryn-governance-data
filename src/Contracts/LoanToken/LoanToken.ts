@@ -15,7 +15,7 @@ class General {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
   target: State;
   sovrynAddress: State;
   admin: State;
@@ -41,13 +41,13 @@ class General {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
     const singleConstantStateCreator = SingleConstantState();
@@ -80,7 +80,7 @@ class General {
 
   getParams(): ContractParam[] {
     return [
-      this.governer,
+      this.governor,
       this.target,
       this.admin,
       this.pauser,

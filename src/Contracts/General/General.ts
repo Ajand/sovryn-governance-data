@@ -13,7 +13,7 @@ class General {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
 
   constructor(
     contractName: string,
@@ -33,19 +33,19 @@ class General {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
   }
 
   getParams(): ContractParam[] {
-    return [this.governer];
+    return [this.governor];
   }
 }
 

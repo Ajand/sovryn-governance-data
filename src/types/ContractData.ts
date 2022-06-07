@@ -11,6 +11,6 @@ interface ContractData {
   params: ContractParam[];
 }
 
-type OnChangeCallback = (data: ContractData[]) => void;
+type OnChangeCallback = (data: any) => void;
 
 export { ContractParam, ContractData, OnChangeCallback };

@@ -4,7 +4,6 @@ import { ethers } from "ethers";
 
 const localStorage = new LocalStorage("./data");
 
-
 const abi = [
   {
     anonymous: false,
@@ -988,8 +987,10 @@ const main = async () => {
   console.log(await contract.getTarget("liquidate(bytes32,address,uint256)")); // Loan Closings
   console.log(await contract.getTarget("depositCollateral(bytes32,uint256)")); // Loan Maintenance
 
-  console.log(await contract.getTarget("getLegacyOracle(address)")); // Protocol Migration 
-  console.log(await contract.getTarget("getSwapExpectedReturn(address,address,uint256)")); // Swaps External
+  console.log(await contract.getTarget("getLegacyOracle(address)")); // Protocol Migration
+  console.log(
+    await contract.getTarget("getSwapExpectedReturn(address,address,uint256)")
+  ); // Swaps External
   console.log(await contract.getTarget("getUserNotFirstTradeFlag(address)")); // Affiliates Module
   console.log(await contract.owner()); // Owner
 };
@@ -998,8 +999,10 @@ const main = async () => {
 
 const governanceData = new GovernanceData(localStorage);
 
-governanceData.getData().forEach((data) => console.log(data));
+governanceData.getData();
 
 governanceData.onChange((currentData) => {
-  currentData.forEach((data) => console.log(data));
+  console.log(
+    currentData.categories[0].contracts.map(governanceData.contractMapper)
+  );
 });

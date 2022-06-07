@@ -13,7 +13,7 @@ class LoanTokenLogicStandard {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
   liquidityMiningAddress: State;
 
   constructor(
@@ -34,13 +34,13 @@ class LoanTokenLogicStandard {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
     this.liquidityMiningAddress = singleSimpleStateCreator(
@@ -54,7 +54,7 @@ class LoanTokenLogicStandard {
   }
 
   getParams(): ContractParam[] {
-    return [this.governer, this.liquidityMiningAddress];
+    return [this.governor, this.liquidityMiningAddress];
   }
 }
 

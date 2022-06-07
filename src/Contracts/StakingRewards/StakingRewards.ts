@@ -13,7 +13,7 @@ class Staking {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
   averageBlockTime: State;
   maxDuration: State;
 
@@ -35,13 +35,13 @@ class Staking {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
     this.averageBlockTime = singleSimpleStateCreator(
@@ -63,7 +63,7 @@ class Staking {
   }
 
   getParams(): ContractParam[] {
-    return [this.governer, this.averageBlockTime, this.maxDuration];
+    return [this.governor, this.averageBlockTime, this.maxDuration];
   }
 }
 

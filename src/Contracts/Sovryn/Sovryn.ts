@@ -14,7 +14,7 @@ class Sovryn {
 
   address: string;
   contractName: string;
-  governer: State;
+  governor: State;
 
   protocolSettings: State;
   loanSettings: State;
@@ -43,13 +43,13 @@ class Sovryn {
       this.localStorage,
       this.contract
     );
-    this.governer = singleSimpleStateCreator(
+    this.governor = singleSimpleStateCreator(
       (state: State) => {
-        this.governer = state;
+        this.governor = state;
         this.governanceData.change();
       },
       "owner",
-      "Governer",
+      "Governor",
       this.contract.filters.OwnershipTransferred(null, null)
     );
     const singleInputStateCreator = SingleInputState(
@@ -140,7 +140,7 @@ class Sovryn {
 
   getParams(): ContractParam[] {
     return [
-      this.governer,
+      this.governor,
       this.protocolSettings,
       this.loanSettings,
       this.loanOpenings,

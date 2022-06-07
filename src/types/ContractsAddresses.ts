@@ -216,7 +216,7 @@ interface ContractsAddresses {
 
   governance1: {
     NTSOV: string;
-    governer: string;
+    governor: string;
     timelock: string;
     governorVault: string;
     MultiSigKeyHolders: string;

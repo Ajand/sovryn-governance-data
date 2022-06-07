@@ -6,7 +6,7 @@ const SingleSimpleState =
   (
     localStorage: LocalStorage,
     contract: ethers.Contract,
-    pollInterval: number = 30 * 1000
+    pollInterval: number = 5 * 60 * 1000
   ) =>
   (
     onChange: Function,

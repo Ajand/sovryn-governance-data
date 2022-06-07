@@ -43,7 +43,7 @@ const SingleSimpleState =
           onChange(returnedValues());
           setState(currentKey, currentState);
         } catch (err) {
-          console.log(err);
+          //console.log(err);
         }
 
         fetchState(i + 1);

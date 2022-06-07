@@ -38,7 +38,7 @@ const SingleSimpleState =
         const currentState = await contract[identifier]();
         setState(currentState);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
       loading = false;
       onChange(returnedValues());

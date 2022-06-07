@@ -268,7 +268,7 @@ class GovernanceData {
     tokenList: TokenList = MainnetTokens
   ) {
     this.localStorage = localStorage;
-    this.provider = new ethers.providers.JsonRpcProvider({
+    this.provider = new ethers.providers.StaticJsonRpcProvider({
       url: rpcUrl,
       skipFetchSetup: true,
     });

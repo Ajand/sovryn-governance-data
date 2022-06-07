@@ -18,9 +18,9 @@ const MainnetAddresses: ContractsAddresses = {
     myntPriceFeed: "0x1C11180b6730661090634cfD9F2510a1acA26fAf",
   },
   loan: {
-    settings: "0x62d4Ba66721fd14007a1C49290ea4BE005b1c0b8",
-    opening: "0xc51d22C296746202527509BE68f949cf8C72f2Bf",
-    maintenance: "0x7CFbAA1017a419AeFd1240b24E8D781cE62FE3D8",
+    settings: "0x4D11C63937d07EbBAb6994d14649BAfe056F6BBe",
+    opening: "0x2Deb2a6B66928754b501D0c2aef1969FfACA01a4",
+    maintenance: "0x88DDf3F75151eABC5F132be0f603b9d4FC0B1025",
     closing: "0x49EcdCCC0b52f306307168DC765e904a739F4770",
     closingLiquidation: "0x5a0171d24EB4eC56362430D7d7FB5949a13B0AFA",
     closingRollover: "0x06593688B3669346Ff0076EE87365F59be1ddcd0",
@@ -251,7 +251,7 @@ const MainnetAddresses: ContractsAddresses = {
 
   fastBTC: {
     Multisig: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
-    ManagedWallet: "0x0f279e810B95E0d425622b9b40D7bCD0B5C4B19d",
+    ManagedWallet: "0xC9e14126E5796e999890a4344b8e4c99Ac7002A1",
   },
 
   LiquidityMining: {

@@ -1,6 +1,7 @@
 import { LocalStorage } from "../types";
 import { ethers } from "ethers";
 import { State } from "../types";
+import RequestQueue from "./RequestQueue";
 
 const SingleSimpleState =
   (
@@ -15,6 +16,8 @@ const SingleSimpleState =
     listener?: ethers.EventFilter
   ): State => {
     var loading = true;
+    const requestQueue = RequestQueue.getInstance();
+
     var value: any = localStorage.getItem(`${contract.address}:${identifier}`)
       ? localStorage.getItem(`${contract.address}:${identifier}`)
       : undefined;
@@ -36,6 +39,7 @@ const SingleSimpleState =
     const fetchState = async (i = 0) => {
       try {
         const currentState = await contract[identifier]();
+        console.log(`State fetched`);
         setState(currentState);
       } catch (err) {
         //console.log(err);
@@ -45,19 +49,21 @@ const SingleSimpleState =
       onChange(returnedValues());
     };
 
-    setTimeout(() => {
-      fetchState();
-    }, Math.floor(Math.random() * 4 * 60 * 1000));
+    //setTimeout(() => {
+    //  fetchState();
+    //}, Math.floor(Math.random() * 4 * 60 * 1000));
+
+    requestQueue.pushRequest(fetchState);
 
     const pollState = () => {
       setInterval(() => {
-        fetchState();
+        requestQueue.pushRequest(fetchState);
       }, pollInterval);
     };
 
     const stateListener = () => {
       contract.on(listener, () => {
-        fetchState();
+        requestQueue.pushRequest(fetchState);
       });
     };
 

@@ -1001,8 +1001,4 @@ const governanceData = new GovernanceData(localStorage);
 
 governanceData.getData();
 
-governanceData.onChange((currentData) => {
-  console.log(
-    currentData.categories[0].contracts.map(governanceData.contractMapper)
-  );
-});
+governanceData.onChange((currentData) => {});

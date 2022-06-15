@@ -46,11 +46,15 @@ const SingleSimpleState =
           //console.log(err);
         }
 
-        fetchState(i + 1);
+        setTimeout(() => {
+          fetchState(i + 1);
+        }, Math.random() * 1000 * i + 1);
       }
     };
 
-    fetchState();
+    setTimeout(() => {
+      fetchState();
+    }, Math.floor(Math.random() * 4 * 60 * 1000));
 
     const pollState = () => {
       setInterval(() => {

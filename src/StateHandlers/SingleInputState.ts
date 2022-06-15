@@ -16,7 +16,9 @@ const SingleSimpleState =
     listener?: ethers.EventFilter
   ): State => {
     var loading = true;
-    var value: any = localStorage.getItem(`${contract.address}:${identifier}:${param}`)
+    var value: any = localStorage.getItem(
+      `${contract.address}:${identifier}:${param}`
+    )
       ? localStorage.getItem(`${contract.address}:${identifier}:${param}`)
       : undefined;
 
@@ -33,22 +35,28 @@ const SingleSimpleState =
       if (value !== currentState) {
         value = currentState;
         onChange(returnedValues());
-        localStorage.setItem(`${contract.address}:${identifier}:${param}`, currentState);
+        localStorage.setItem(
+          `${contract.address}:${identifier}:${param}`,
+          currentState
+        );
       }
     };
 
-    const fetchState = async () => {
+    const fetchState = async (i = 0) => {
       try {
         const currentState = await contract[identifier](param);
         setState(currentState);
       } catch (err) {
         //console.log(err);
+        setTimeout(() => fetchState(i + 1), Math.floor(Math.random() * 2000));
       }
       loading = false;
       onChange(returnedValues());
     };
 
-    fetchState();
+    setTimeout(() => {
+      fetchState();
+    }, Math.floor(Math.random() * 4 * 60 * 1000));
 
     const pollState = () => {
       setInterval(() => {

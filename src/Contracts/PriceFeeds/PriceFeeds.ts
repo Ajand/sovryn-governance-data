@@ -98,3 +98,5 @@ class PriceFeeds {
 }
 
 export default PriceFeeds;
+
+

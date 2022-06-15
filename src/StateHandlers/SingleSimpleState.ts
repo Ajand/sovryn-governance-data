@@ -6,7 +6,7 @@ const SingleSimpleState =
   (
     localStorage: LocalStorage,
     contract: ethers.Contract,
-    pollInterval: number = 5 * 60 * 1000
+    pollInterval: number = 15 * 60 * 1000
   ) =>
   (
     onChange: Function,
@@ -33,18 +33,21 @@ const SingleSimpleState =
       }
     };
 
-    const fetchState = async () => {
+    const fetchState = async (i = 0) => {
       try {
         const currentState = await contract[identifier]();
         setState(currentState);
       } catch (err) {
         //console.log(err);
+        setTimeout(() => {}, Math.floor(Math.random() * i * 60 * 1000));
       }
       loading = false;
       onChange(returnedValues());
     };
 
-    fetchState();
+    setTimeout(() => {
+      fetchState();
+    }, Math.floor(Math.random() * 4 * 60 * 1000));
 
     const pollState = () => {
       setInterval(() => {

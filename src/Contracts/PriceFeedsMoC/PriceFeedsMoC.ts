@@ -15,6 +15,7 @@ class PriceFeedsMoC {
   contractName: string;
   rskOracleAddress: State;
   mocOracleAddress: State;
+  governor: State;
 
   constructor(
     contractName: string,
@@ -33,6 +34,16 @@ class PriceFeedsMoC {
     const singleSimpleStateCreator = SingleSimpleState(
       this.localStorage,
       this.contract
+    );
+
+    this.governor = singleSimpleStateCreator(
+      (state: State) => {
+        this.governor = state;
+        this.governanceData.change();
+      },
+      "owner",
+      "Governor",
+      this.contract.filters.OwnershipTransferred(null, null)
     );
 
     this.rskOracleAddress = singleSimpleStateCreator(
@@ -57,7 +68,7 @@ class PriceFeedsMoC {
   }
 
   getParams(): ContractParam[] {
-    return [this.rskOracleAddress, this.mocOracleAddress];
+    return [this.governor, this.rskOracleAddress, this.mocOracleAddress];
   }
 }
 

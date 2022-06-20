@@ -13,6 +13,7 @@ class BProPriceFeed {
 
   address: string;
   contractName: string;
+  governor: State;
   mocStateAddress: State;
 
   constructor(
@@ -33,6 +34,15 @@ class BProPriceFeed {
       this.localStorage,
       this.contract
     );
+    this.governor = singleSimpleStateCreator(
+      (state: State) => {
+        this.governor = state;
+        this.governanceData.change();
+      },
+      "owner",
+      "Governor",
+      this.contract.filters.OwnershipTransferred(null, null)
+    );
     this.mocStateAddress = singleSimpleStateCreator(
       (state: State) => {
         this.mocStateAddress = state;
@@ -45,7 +55,7 @@ class BProPriceFeed {
   }
 
   getParams(): ContractParam[] {
-    return [this.mocStateAddress];
+    return [this.governor, this.mocStateAddress];
   }
 }
 

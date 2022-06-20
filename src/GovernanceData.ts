@@ -1477,7 +1477,7 @@ class GovernanceData {
     };
   }
 
-  onChange(callback: OnChangeCallback) {
+  onChange(callback: OnChangeCallback = () => {}) {
     this.onChangeCallback = callback;
   }
 

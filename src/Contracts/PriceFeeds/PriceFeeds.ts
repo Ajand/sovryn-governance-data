@@ -14,6 +14,7 @@ class PriceFeeds {
 
   address: string;
   contractName: string;
+  governor: State;
   protocolTokenEthPrice: State;
   globalPricingPaused: State;
   pricesFeeds: State;
@@ -41,6 +42,16 @@ class PriceFeeds {
     const mappingSimpleStateCreator = MappingSimpleState(
       this.localStorage,
       this.contract
+    );
+
+    this.governor = singleSimpleStateCreator(
+      (state: State) => {
+        this.governor = state;
+        this.governanceData.change();
+      },
+      "owner",
+      "Governor",
+      this.contract.filters.OwnershipTransferred(null, null)
     );
 
     this.protocolTokenEthPrice = singleSimpleStateCreator(
@@ -89,6 +100,7 @@ class PriceFeeds {
 
   getParams(): ContractParam[] {
     return [
+      this.governor,
       this.protocolTokenEthPrice,
       this.globalPricingPaused,
       this.pricesFeeds,
@@ -98,5 +110,3 @@ class PriceFeeds {
 }
 
 export default PriceFeeds;
-
-

@@ -14,6 +14,7 @@ class PriceFeedRSKOracle {
   address: string;
   contractName: string;
   rskOracleAddress: State;
+  governor: State;
 
   constructor(
     contractName: string,
@@ -35,6 +36,16 @@ class PriceFeedRSKOracle {
       this.contract
     );
 
+    this.governor = singleSimpleStateCreator(
+      (state: State) => {
+        this.governor = state;
+        this.governanceData.change();
+      },
+      "owner",
+      "Governor",
+      this.contract.filters.OwnershipTransferred(null, null)
+    );
+
     this.rskOracleAddress = singleSimpleStateCreator(
       (state: State) => {
         this.rskOracleAddress = state;
@@ -47,7 +58,7 @@ class PriceFeedRSKOracle {
   }
 
   getParams(): ContractParam[] {
-    return [this.rskOracleAddress];
+    return [this.governor, this.rskOracleAddress];
   }
 }
 

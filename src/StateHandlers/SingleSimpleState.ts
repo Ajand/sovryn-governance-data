@@ -53,7 +53,13 @@ const SingleSimpleState =
     //  fetchState();
     //}, Math.floor(Math.random() * 4 * 60 * 1000));
 
-    requestQueue.pushRequest(fetchState);
+    if (value) {
+      setTimeout(() => {
+        requestQueue.pushRequest(fetchState);
+      }, 40 * 1000);
+    } else {
+      requestQueue.pushRequest(fetchState);
+    }
 
     const pollState = () => {
       setInterval(() => {

@@ -699,22 +699,22 @@ class GovernanceData {
     ///
     this.oGEarlyAccessToken = new General(
       "OG EarlyAccessToken",
-      this.contractsAddresses.multisig.exchequerMultisig,
+      this.contractsAddresses.nfts.oGEarlyAccessToken,
       this
     );
     this.genesisCommunityTier = new General(
       "Genesis Community Tier",
-      this.contractsAddresses.multisig.exchequerMultisig,
+      this.contractsAddresses.nfts.genesisCommunityTier,
       this
     );
     this.genesisHeroTier = new General(
       "Genesis Hero Tier",
-      this.contractsAddresses.multisig.exchequerMultisig,
+      this.contractsAddresses.nfts.genesisHeroTier,
       this
     );
     this.genesisSuperHeroTier = new General(
       "Genesis Super Hero Tier",
-      this.contractsAddresses.multisig.exchequerMultisig,
+      this.contractsAddresses.nfts.genesisHeroTier,
       this
     );
     ///

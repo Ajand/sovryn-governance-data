@@ -15,7 +15,6 @@ class RequestQueue {
   }
 
   public pushRequest(fn: Function) {
-    console.log("request added!", this.que.length);
     this.que.push(fn);
   }
 

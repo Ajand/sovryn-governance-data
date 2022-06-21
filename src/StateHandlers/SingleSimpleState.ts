@@ -39,19 +39,13 @@ const SingleSimpleState =
     const fetchState = async (i = 0) => {
       try {
         const currentState = await contract[identifier]();
-        console.log(`State fetched`);
         setState(currentState);
       } catch (err) {
-        //console.log(err);
         setTimeout(() => {}, Math.floor(Math.random() * i * 60 * 1000));
       }
       loading = false;
       onChange(returnedValues());
     };
-
-    //setTimeout(() => {
-    //  fetchState();
-    //}, Math.floor(Math.random() * 4 * 60 * 1000));
 
     if (value) {
       setTimeout(() => {

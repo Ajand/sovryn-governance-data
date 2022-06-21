@@ -48,7 +48,6 @@ const SingleSimpleState =
     const fetchState = async (i = 0) => {
       try {
         const currentState = await contract[identifier](param);
-        console.log(`State fetched`);
         setState(currentState);
       } catch (err) {
         //console.log(err);
@@ -58,10 +57,6 @@ const SingleSimpleState =
       onChange(returnedValues());
     };
 
-    //setTimeout(() => {
-    //  fetchState();
-    //}, Math.floor(Math.random() * 4 * 60 * 1000));
-
     if (value) {
       setTimeout(() => {
         requestQueue.pushRequest(fetchState);
@@ -69,7 +64,7 @@ const SingleSimpleState =
     } else {
       requestQueue.pushRequest(fetchState);
     }
-    
+
     const pollState = () => {
       setInterval(() => {
         requestQueue.pushRequest(fetchState);

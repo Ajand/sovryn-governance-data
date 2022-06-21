@@ -24,7 +24,12 @@ const SingleSimpleState =
 
     const setState = (currentKey: any, currentState: any) => {
       if (value !== currentState) {
-        value.set(currentKey, currentState);
+        value.set(
+          currentKey,
+          currentState instanceof ethers.BigNumber
+            ? currentState.toString()
+            : String(currentState)
+        );
         onChange(returnedValues());
         localStorage.setItem(
           `${contract.address}:${identifier}`,
@@ -42,9 +47,7 @@ const SingleSimpleState =
           const currentState = await contract[identifier](currentKey);
           onChange(returnedValues());
           setState(currentKey, currentState);
-        } catch (err) {
-          //console.log(err);
-        }
+        } catch (err) {}
 
         setTimeout(() => {
           fetchState(i + 1);

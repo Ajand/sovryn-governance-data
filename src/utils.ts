@@ -18,9 +18,7 @@ const getContracts = (
 const getAllCategories = (
   governanceState: ReturnType<GovernanceData["getData"]>
 ) => {
-  const allCategories = governanceState.categories.map(
-    (cat) => cat.categoryName
-  );
+  return governanceState.categories.map((cat) => cat.categoryName);
 };
 
 const filterSelectedCategories =
@@ -59,9 +57,18 @@ const filterBySearchString =
     return [...result];
   };
 
+const getContractName =
+  (allContracts: ReturnType<typeof getContracts>) =>
+  (contractAddress: string) => {
+    return allContracts.find(
+      (cont) => cont.address.toLowerCase() === contractAddress.toLowerCase()
+    )?.contractName;
+  };
+
 export default {
-    getContracts,
-    getAllCategories,
-    filterSelectedCategories,
-    filterBySearchString
+  getContracts,
+  getAllCategories,
+  filterSelectedCategories,
+  filterBySearchString,
+  getContractName,
 };

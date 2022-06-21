@@ -1,7 +1,7 @@
 {
   "name": "sovryn-governance-data",
-  "version": "1.0.22",
-  "description": "Can log \"hello world\" and \"goodbye world\" to the console!",
+  "version": "1.0.23",
+  "description": "A package to get sovryn governance data",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"

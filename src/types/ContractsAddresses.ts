@@ -333,6 +333,14 @@ interface ContractsAddresses {
     multiTroveGetter: string;
     multiTroveGetter_Impl: string;
   };
+
+  BabelFisBscDev: {
+    MassetProxy: string;
+    Masset: string;
+    Token: string;
+    BasketManager: string;
+    migrations: string;
+  };
 }
 
 export { ContractsAddresses };

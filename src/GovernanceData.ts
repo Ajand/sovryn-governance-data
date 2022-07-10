@@ -27,7 +27,7 @@ import LockedSOV from "./Contracts/LockedSOV/LockedSOV";
 // This is going to be the main entry of the package
 // Everything we need will be returned by an instance of this
 class GovernanceData {
-  version = 1.26;
+  version = 1.27;
 
   provider: ethers.providers.Provider;
   localStorage: LocalStorage;
@@ -302,6 +302,12 @@ class GovernanceData {
   zero_zeroToken_Implementation: General;
   zero_multiTroveGetter: General;
   zero_multiTroveGetter_Impl: General;
+  ///
+  BabelFisBscDevMassetProxy: General;
+  BabelFisBscDevMasset: General;
+  BabelFisBscDevToken: General;
+  BabelFisBscDevBasketManager: General;
+  BabelFisBscDevmigrations: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1444,6 +1450,32 @@ class GovernanceData {
       this.contractsAddresses.zero.multiTroveGetter_Impl,
       this
     );
+    ///
+    this.BabelFisBscDevMassetProxy = new General(
+      "Babel-Fis Bsc-Dev Masset Proxy",
+      this.contractsAddresses.BabelFisBscDev.MassetProxy,
+      this
+    );
+    this.BabelFisBscDevMasset = new General(
+      "Babel-Fis Bsc-Dev Masset",
+      this.contractsAddresses.BabelFisBscDev.Masset,
+      this
+    );
+    this.BabelFisBscDevToken = new General(
+      "Babel-Fis Bsc-Dev Token",
+      this.contractsAddresses.BabelFisBscDev.Token,
+      this
+    );
+    this.BabelFisBscDevBasketManager = new General(
+      "Babel-Fis Bsc-Dev Basket Manager",
+      this.contractsAddresses.BabelFisBscDev.BasketManager,
+      this
+    );
+    this.BabelFisBscDevmigrations = new General(
+      "Babel-Fis Bsc-Dev Migrations",
+      this.contractsAddresses.BabelFisBscDev.migrations,
+      this
+    );
   }
 
   getData() {
@@ -1750,6 +1782,16 @@ class GovernanceData {
             this.zero_zeroToken_Implementation,
             this.zero_multiTroveGetter,
             this.zero_multiTroveGetter_Impl,
+          ],
+        },
+        {
+          categoryName: "Babel-Fis Bsc-Dev",
+          contracts: [
+            this.BabelFisBscDevMassetProxy,
+            this.BabelFisBscDevMasset,
+            this.BabelFisBscDevToken,
+            this.BabelFisBscDevBasketManager,
+            this.BabelFisBscDevmigrations,
           ],
         },
       ],

@@ -330,7 +330,15 @@ const MainnetAddresses: ContractsAddresses = {
     zeroToken_Implementation: "0x451291d48f23782CB5609CED5a195B0C92EddC7b",
     multiTroveGetter: "0xF265a169191348c02829B62650B025BdeAf00AE4",
     multiTroveGetter_Impl: "0x5E18262CcACF8f5c1113507Fbf3af0216533676F",
-  }
+  },
+
+  BabelFisBscDev: {
+    MassetProxy: "0x1da3d286a3abeadb2b7677c99730d725af58e39d",
+    Masset: "0x77657f38d46548778296071dab8a0a601d390c20",
+    Token: "0x6a7f2d2e5d5756729e875c8f8fc254448e763fdf",
+    BasketManager: "0x152E8D16f7fF6F9BDA5d989CC2daA514f427a9BB",
+    migrations: "0x1506E6A9fa9E805566490280eEC79cd54cF30F89",
+  },
 };
 
 export default MainnetAddresses;

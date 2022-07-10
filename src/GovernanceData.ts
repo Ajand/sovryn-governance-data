@@ -1347,6 +1347,11 @@ class GovernanceData {
       this.contractsAddresses.zero.defaultPool,
       this
     );
+    this.zero_defaultPool_Implementation = new General(
+      "Zero Default Pool Implementation",
+      this.contractsAddresses.zero.defaultPool_Implementation,
+      this
+    );
     this.zero_hintHelpers = new General(
       "Zero Hint Helpers",
       this.contractsAddresses.zero.hintHelpers,
@@ -1406,6 +1411,11 @@ class GovernanceData {
     this.zero_liquityBaseParams = new General(
       "Zero Liquity Base Params",
       this.contractsAddresses.zero.liquityBaseParams,
+      this
+    );
+    this.zero_liquityBaseParams_Impl = new General(
+      "Zero Liquity Base Params  Implementation",
+      this.contractsAddresses.zero.liquityBaseParams_Impl,
       this
     );
 

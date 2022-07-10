@@ -3,6 +3,7 @@ import GovernanceData from "./GovernanceData";
 const getContracts = (
   governanceState: ReturnType<GovernanceData["getData"]>
 ) => {
+
   return governanceState.categories.reduce((pV, cV) => {
     return [
       ...pV,

@@ -1493,7 +1493,7 @@ class GovernanceData {
       version: this.version,
       categories: [
         {
-          categoryName: "Marginal Trading Protocol",
+          categoryName: "Margin Trading Protocol",
           contracts: [
             this.sovryn,
             this.priceFeeds,
@@ -1715,7 +1715,7 @@ class GovernanceData {
           ],
         },
         {
-          categoryName: "Aggeregators",
+          categoryName: "Aggregators",
           contracts: [this.xusd, this.eths, this.bnbs],
         },
         {

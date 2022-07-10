@@ -296,6 +296,43 @@ interface ContractsAddresses {
     BTCUSDOrderbook: string;
     marginTokenAddr: string;
   };
+
+  zero: {
+    activePool: string;
+    activePool_Implementation: string;
+    borrowerOperations: string;
+    borrowerOperations_Impl: string;
+    troveManager: string;
+    troveManager_Implementetion: string;
+    troveManagerRedeemOps: string;
+    collSurplusPool: string;
+    collSurplusPool_Impl: string;
+    communityIssuance: string;
+    communityIssuance_Impl: string;
+    defaultPool: string;
+    defaultPool_Implementation: string;
+    hintHelpers: string;
+    hintHelpers_Implementation: string;
+    zeroStaking: string;
+    zeroStaking_Implementation: string;
+    priceFeed: string;
+    priceFeed_Implementation: string;
+    sortedTroves: string;
+    sortedTroves_Implementation: string;
+    stabilityPool: string;
+    stabilityPool_Implementation: string;
+    gasPool: string;
+    liquityBaseParams: string;
+    liquityBaseParams_Impl: string;
+    feeDistributor: string;
+    feeDistributor_Implementation: string;
+    zusdToken: string;
+    zusdToken_Implementation: string;
+    zeroToken: string;
+    zeroToken_Implementation: string;
+    multiTroveGetter: string;
+    multiTroveGetter_Impl: string;
+  };
 }
 
 export { ContractsAddresses };

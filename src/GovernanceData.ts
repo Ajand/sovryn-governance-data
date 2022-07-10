@@ -267,6 +267,41 @@ class GovernanceData {
   BTCUSDOracle: General;
   BTCUSDOrderbook: General;
   marginTokenAddr: General;
+  //
+  zero_activePool: General;
+  zero_activePool_Implementation: General;
+  zero_borrowerOperations: General;
+  zero_borrowerOperations_Impl: General;
+  zero_troveManager: General;
+  zero_troveManager_Implementetion: General;
+  zero_troveManagerRedeemOps: General;
+  zero_collSurplusPool: General;
+  zero_collSurplusPool_Impl: General;
+  zero_communityIssuance: General;
+  zero_communityIssuance_Impl: General;
+  zero_defaultPool: General;
+  zero_defaultPool_Implementation: General;
+  zero_hintHelpers: General;
+  zero_hintHelpers_Implementation: General;
+  zero_zeroStaking: General;
+  zero_zeroStaking_Implementation: General;
+  zero_priceFeed: General;
+  zero_priceFeed_Implementation: General;
+  zero_sortedTroves: General;
+  zero_sortedTroves_Implementation: General;
+  zero_stabilityPool: General;
+  zero_stabilityPool_Implementation: General;
+  zero_gasPool: General;
+  zero_liquityBaseParams: General;
+  zero_liquityBaseParams_Impl: General;
+  zero_feeDistributor: General;
+  zero_feeDistributor_Implementation: General;
+  zero_zusdToken: General;
+  zero_zusdToken_Implementation: General;
+  zero_zeroToken: General;
+  zero_zeroToken_Implementation: General;
+  zero_multiTroveGetter: General;
+  zero_multiTroveGetter_Impl: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1245,6 +1280,170 @@ class GovernanceData {
       this.contractsAddresses.PrepetualFutures.marginTokenAddr,
       this
     );
+    //
+    this.zero_activePool = new General(
+      "Zero Active Pool",
+      this.contractsAddresses.zero.activePool,
+      this
+    );
+    this.zero_activePool_Implementation = new General(
+      "Zero Active Pool Implementation",
+      this.contractsAddresses.zero.activePool_Implementation,
+      this
+    );
+    this.zero_borrowerOperations = new General(
+      "Zero Borrower Operations",
+      this.contractsAddresses.zero.borrowerOperations,
+      this
+    );
+    this.zero_borrowerOperations_Impl = new General(
+      "Zero Borrower Operations Implementation",
+      this.contractsAddresses.zero.borrowerOperations_Impl,
+      this
+    );
+    this.zero_troveManager = new General(
+      "Zero Trove Manager",
+      this.contractsAddresses.zero.troveManager,
+      this
+    );
+    this.zero_troveManager_Implementetion = new General(
+      "Zero Trove Manager Implementation",
+      this.contractsAddresses.zero.troveManager_Implementetion,
+      this
+    );
+    this.zero_troveManagerRedeemOps = new General(
+      "Zero Trove Manager Redeem Ops",
+      this.contractsAddresses.zero.troveManagerRedeemOps,
+      this
+    );
+    this.zero_collSurplusPool = new General(
+      "Zero Coll Surplus Pool",
+      this.contractsAddresses.zero.collSurplusPool,
+      this
+    );
+    this.zero_collSurplusPool_Impl = new General(
+      "Zero Coll Surplus Pool Implementation",
+      this.contractsAddresses.zero.collSurplusPool_Impl,
+      this
+    );
+    this.zero_communityIssuance = new General(
+      "Zero Community Issuance",
+      this.contractsAddresses.zero.communityIssuance,
+      this
+    );
+    this.zero_communityIssuance_Impl = new General(
+      "Zero Community Issuance Implementation",
+      this.contractsAddresses.zero.communityIssuance_Impl,
+      this
+    );
+    this.zero_defaultPool = new General(
+      "Zero Default Pool",
+      this.contractsAddresses.zero.defaultPool,
+      this
+    );
+    this.zero_hintHelpers = new General(
+      "Zero Hint Helpers",
+      this.contractsAddresses.zero.hintHelpers,
+      this
+    );
+    this.zero_hintHelpers_Implementation = new General(
+      "Zero Hint Helpers Implementation",
+      this.contractsAddresses.zero.hintHelpers_Implementation,
+      this
+    );
+    this.zero_zeroStaking = new General(
+      "Zero Staking",
+      this.contractsAddresses.zero.zeroStaking,
+      this
+    );
+    this.zero_zeroStaking_Implementation = new General(
+      "Zero Staking Implementation",
+      this.contractsAddresses.zero.zeroStaking_Implementation,
+      this
+    );
+    this.zero_priceFeed = new General(
+      "Zero PriceFeed",
+      this.contractsAddresses.zero.priceFeed,
+      this
+    );
+    this.zero_priceFeed_Implementation = new General(
+      "Zero PriceFeed Implementation",
+      this.contractsAddresses.zero.priceFeed_Implementation,
+      this
+    );
+    this.zero_sortedTroves = new General(
+      "Zero Sorted Troves",
+      this.contractsAddresses.zero.sortedTroves,
+      this
+    );
+    this.zero_sortedTroves_Implementation = new General(
+      "Zero Sorted Troves Implementation",
+      this.contractsAddresses.zero.sortedTroves_Implementation,
+      this
+    );
+    this.zero_stabilityPool = new General(
+      "Zero Stability Pool",
+      this.contractsAddresses.zero.stabilityPool,
+      this
+    );
+
+    this.zero_stabilityPool_Implementation = new General(
+      "Zero Stability Pool Implementation",
+      this.contractsAddresses.zero.stabilityPool_Implementation,
+      this
+    );
+    this.zero_gasPool = new General(
+      "Zero Gas Pool",
+      this.contractsAddresses.zero.gasPool,
+      this
+    );
+    this.zero_liquityBaseParams = new General(
+      "Zero Liquity Base Params",
+      this.contractsAddresses.zero.liquityBaseParams,
+      this
+    );
+
+    this.zero_feeDistributor = new General(
+      "Zero Fee Distributor",
+      this.contractsAddresses.zero.feeDistributor,
+      this
+    );
+    this.zero_feeDistributor_Implementation = new General(
+      "Zero Fee Distributor Implementation",
+      this.contractsAddresses.zero.feeDistributor_Implementation,
+      this
+    );
+    this.zero_zusdToken = new General(
+      "ZUSD Token",
+      this.contractsAddresses.zero.zusdToken,
+      this
+    );
+    this.zero_zusdToken_Implementation = new General(
+      "ZUSD Token  Implementation",
+      this.contractsAddresses.zero.zusdToken_Implementation,
+      this
+    );
+
+    this.zero_zeroToken = new General(
+      "Zero Token",
+      this.contractsAddresses.zero.zeroToken,
+      this
+    );
+    this.zero_zeroToken_Implementation = new General(
+      "Zero Token Implementation",
+      this.contractsAddresses.zero.zeroToken_Implementation,
+      this
+    );
+    this.zero_multiTroveGetter = new General(
+      "Zero Multi Trove Getter",
+      this.contractsAddresses.zero.multiTroveGetter,
+      this
+    );
+    this.zero_multiTroveGetter_Impl = new General(
+      "Zero Multi Trove Getter Implementation",
+      this.contractsAddresses.zero.multiTroveGetter_Impl,
+      this
+    );
   }
 
   getData() {
@@ -1512,6 +1711,45 @@ class GovernanceData {
             this.BTCUSDOracle,
             this.BTCUSDOrderbook,
             this.marginTokenAddr,
+          ],
+        },
+        {
+          categoryName: "Zero",
+          contracts: [
+            this.zero_activePool,
+            this.zero_activePool_Implementation,
+            this.zero_borrowerOperations,
+            this.zero_borrowerOperations_Impl,
+            this.zero_troveManager,
+            this.zero_troveManager_Implementetion,
+            this.zero_troveManagerRedeemOps,
+            this.zero_collSurplusPool,
+            this.zero_collSurplusPool_Impl,
+            this.zero_communityIssuance,
+            this.zero_communityIssuance_Impl,
+            this.zero_defaultPool,
+            this.zero_defaultPool_Implementation,
+            this.zero_hintHelpers,
+            this.zero_hintHelpers_Implementation,
+            this.zero_zeroStaking,
+            this.zero_zeroStaking_Implementation,
+            this.zero_priceFeed,
+            this.zero_priceFeed_Implementation,
+            this.zero_sortedTroves,
+            this.zero_sortedTroves_Implementation,
+            this.zero_stabilityPool,
+            this.zero_stabilityPool_Implementation,
+            this.zero_gasPool,
+            this.zero_liquityBaseParams,
+            this.zero_liquityBaseParams_Impl,
+            this.zero_feeDistributor,
+            this.zero_feeDistributor_Implementation,
+            this.zero_zusdToken,
+            this.zero_zusdToken_Implementation,
+            this.zero_zeroToken,
+            this.zero_zeroToken_Implementation,
+            this.zero_multiTroveGetter,
+            this.zero_multiTroveGetter_Impl,
           ],
         },
       ],

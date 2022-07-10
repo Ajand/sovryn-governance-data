@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
+import { BitocracyData } from "../src/index";
 
+const bitocracy = new BitocracyData();
 
-const myNum = ethers.BigNumber.from("0x23")
-console.log(myNum instanceof ethers.BigNumber);
+console.log(bitocracy.getData());

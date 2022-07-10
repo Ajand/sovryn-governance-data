@@ -260,6 +260,13 @@ class GovernanceData {
   Watcher: General;
   //
   SettlementProxy: General;
+  //
+  PerpetualManagerProxy: General;
+  RbtcPaymaster: General;
+  LimitOrderBookFactory: General;
+  BTCUSDOracle: General;
+  BTCUSDOrderbook: General;
+  marginTokenAddr: General;
 
   constructor(
     localStorage: LocalStorage,
@@ -1207,6 +1214,37 @@ class GovernanceData {
       this.contractsAddresses.LimitOrder.SettlementProxy,
       this
     );
+    //
+    this.PerpetualManagerProxy = new General(
+      "Perpetual Manager Proxy",
+      this.contractsAddresses.PrepetualFutures.PerpetualManagerProxy,
+      this
+    );
+    this.RbtcPaymaster = new General(
+      "Rbtc Paymaster",
+      this.contractsAddresses.PrepetualFutures.RbtcPaymaster,
+      this
+    );
+    this.LimitOrderBookFactory = new General(
+      "Limit Order Book Factory",
+      this.contractsAddresses.PrepetualFutures.LimitOrderBookFactory,
+      this
+    );
+    this.BTCUSDOracle = new General(
+      "BTC-USD Oracle",
+      this.contractsAddresses.PrepetualFutures.BTCUSDOracle,
+      this
+    );
+    this.BTCUSDOrderbook = new General(
+      "BTC-USD Order Book",
+      this.contractsAddresses.PrepetualFutures.BTCUSDOrderbook,
+      this
+    );
+    this.marginTokenAddr = new General(
+      "Margin Token Address",
+      this.contractsAddresses.PrepetualFutures.marginTokenAddr,
+      this
+    );
   }
 
   getData() {
@@ -1464,6 +1502,17 @@ class GovernanceData {
         {
           categoryName: "Limit Order",
           contracts: [this.SettlementProxy],
+        },
+        {
+          categoryName: "Prepetual Futures",
+          contracts: [
+            this.PerpetualManagerProxy,
+            this.RbtcPaymaster,
+            this.LimitOrderBookFactory,
+            this.BTCUSDOracle,
+            this.BTCUSDOrderbook,
+            this.marginTokenAddr,
+          ],
         },
       ],
     };

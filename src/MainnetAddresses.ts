@@ -24,7 +24,7 @@ const MainnetAddresses: ContractsAddresses = {
     closing: "0x49EcdCCC0b52f306307168DC765e904a739F4770",
     closingLiquidation: "0x5a0171d24EB4eC56362430D7d7FB5949a13B0AFA",
     closingRollover: "0x06593688B3669346Ff0076EE87365F59be1ddcd0",
-    closingWith: "0xD8c5c2F3f6A9EdfAc967d35B68A996B5820ADaC9",
+    closingWith: "0xfe901C84Ed9c827b48Ca3AF8b2C8a6221638Eb8A",
     closingBase: "0x712C33fde72E8DF893DA603b15f6a342388cEf60",
     iDOC: {
       loanToken: "0xd8D25f03EBbA94E15Df2eD4d6D38276B595593c1",
@@ -245,7 +245,7 @@ const MainnetAddresses: ContractsAddresses = {
     VestingRegistry: "0x80B036ae59B3e38B573837c01BB1DB95515b7E6B",
     AdoptionFund: "0x0f31cfd6aAb4d378668Ad74DeFa89d3f4DB26633",
     DevelopmentFund: "0x617866cC4a089c3653ddC31a618b078291839AeB",
-    StakingRewardsLogic: "0x6CBE8C2dFfb88973E5cC2ff4e732a0D651041215",
+    StakingRewardsLogic: "0x0D7dFd579296Af1D5086E6A66Da262ccdeBc358D",
     VestingCreator: "0xa003D9F781a498D90f489328612E74Af1027417f",
   },
 
@@ -284,6 +284,15 @@ const MainnetAddresses: ContractsAddresses = {
 
   LimitOrder: {
     SettlementProxy: "0x913B394E82DfAC26456934c25e4517EE8a8f84D4",
+  },
+
+  PrepetualFutures: {
+    PerpetualManagerProxy: "0x86f586dc122d31E7654f89eb566B779C3D843e22",
+    RbtcPaymaster: "0xd537EB00E053Fc97A58f22b2FB6f064Bd4C10cCA",
+    LimitOrderBookFactory: "0x71509E41985BA05f5f86661F1b5e4c10337f03E3",
+    BTCUSDOracle: "0x37E551b23f982f1b21f668413a4EEfADaAA7e6BC",
+    BTCUSDOrderbook: "0x3ee8dAe27Feb809BD51eEdda749c3C2f1851e492",
+    marginTokenAddr: "0x6a7F2d2e5D5756729e875c8F8fC254448E763Fdf",
   },
 };
 

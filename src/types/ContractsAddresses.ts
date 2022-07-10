@@ -286,7 +286,16 @@ interface ContractsAddresses {
 
   LimitOrder: {
     SettlementProxy: string;
-  }
+  };
+
+  PrepetualFutures: {
+    PerpetualManagerProxy: string;
+    RbtcPaymaster: string;
+    LimitOrderBookFactory: string;
+    BTCUSDOracle: string;
+    BTCUSDOrderbook: string;
+    marginTokenAddr: string;
+  };
 }
 
 export { ContractsAddresses };

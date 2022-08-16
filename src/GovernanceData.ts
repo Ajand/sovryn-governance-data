@@ -762,7 +762,7 @@ class GovernanceData {
     );
     this.genesisSuperHeroTier = new General(
       "Genesis Super Hero Tier",
-      this.contractsAddresses.nfts.genesisHeroTier,
+      this.contractsAddresses.nfts.genesisSuperHeroTier,
       this
     );
     ///
@@ -1658,6 +1658,7 @@ class GovernanceData {
             this.StakingImplementation,
             this.FeeSharingProxyOld,
             this.FeeSharingProxy,
+            this.FeeSharingLogic,
             this.TimelockOwner,
             this.GovernorOwner,
             this.GovernorVaultOwner,
@@ -1716,7 +1717,11 @@ class GovernanceData {
         },
         {
           categoryName: "Aggregators",
-          contracts: [this.xusd, this.eths, this.bnbs],
+          contracts: [
+            this.AggregatorsXUSD,
+            this.AggregatorsEths,
+            this.AggregatorsBnbs,
+          ],
         },
         {
           categoryName: "Mynt",

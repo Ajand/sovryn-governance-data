@@ -1,6 +1,6 @@
 {
   "name": "sovryn-governance-data",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "A package to get sovryn governance data",
   "main": "dist/index.js",
   "scripts": {

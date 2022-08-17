@@ -73,7 +73,7 @@ class General {
         this.liquidityMiningAddress = state;
         this.governanceData.change();
       },
-      "liquidityMiningAddress",
+      "getLiquidityMiningAddress",
       "Liquidity Mining Address"
     );
   }

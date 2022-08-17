@@ -30,6 +30,8 @@ class GovernanceData {
   version = 1.27;
 
   provider: ethers.providers.Provider;
+  ethProvider: ethers.providers.Provider;
+  bscProvider: ethers.providers.Provider;
   localStorage: LocalStorage;
   onChangeCallback: OnChangeCallback;
 
@@ -312,12 +314,22 @@ class GovernanceData {
   constructor(
     localStorage: LocalStorage,
     rpcUrl: string = "https://public-node.rsk.co",
+    ethRpcUrl: string = "",
+    bscRpcUrl: string = "",
     contractsAddresses: ContractsAddresses = MainnetAddresses,
     tokenList: TokenList = MainnetTokens
   ) {
     this.localStorage = localStorage;
     this.provider = new ethers.providers.StaticJsonRpcProvider({
       url: rpcUrl,
+      skipFetchSetup: true,
+    });
+    this.ethProvider = new ethers.providers.StaticJsonRpcProvider({
+      url: ethRpcUrl,
+      skipFetchSetup: true,
+    });
+    this.bscProvider = new ethers.providers.StaticJsonRpcProvider({
+      url: bscRpcUrl,
       skipFetchSetup: true,
     });
     this.contractsAddresses = contractsAddresses;
@@ -769,32 +781,38 @@ class GovernanceData {
     this.bridgeRskEthEthSideBridge = new General(
       "Bridge ETH-RSK, ETH SIDE Bridge",
       this.contractsAddresses.bridges.ethRsk.ethSide.bridge,
-      this
+      this,
+      "eth"
     );
     this.bridgeRskEthEthSideFederation = new General(
       "Bridge ETH-RSK, ETH SIDE Federation",
       this.contractsAddresses.bridges.ethRsk.ethSide.federation,
-      this
+      this,
+      "eth"
     );
     this.bridgeRskEthEthSideMultisig = new General(
       "Bridge ETH-RSK, ETH SIDE MultiSig",
       this.contractsAddresses.bridges.ethRsk.ethSide.multisig,
-      this
+      this,
+      "eth"
     );
     this.bridgeRskEthEthSideAllowToken = new General(
       "Bridge ETH-RSK, ETH SIDE Allow Tokens",
       this.contractsAddresses.bridges.ethRsk.ethSide.allowToken,
-      this
+      this,
+      "eth"
     );
     this.bridgeRskEthEthSideWeth = new General(
       "Bridge ETH-RSK, ETH SIDE Weth",
       this.contractsAddresses.bridges.ethRsk.ethSide.weth,
-      this
+      this,
+      "eth"
     );
     this.bridgeRskEthEthSideESov = new General(
       "Bridge ETH-RSK, ETH SIDE ESov",
       this.contractsAddresses.bridges.ethRsk.ethSide.eSov,
-      this
+      this,
+      "eth"
     );
     ///
     this.bridgeRskEthRskSideBridge = new General(
@@ -826,32 +844,38 @@ class GovernanceData {
     this.bridgeRskBscBScSideBridge = new General(
       "Bridge BSC-RSK, BSC SIDE Bridge",
       this.contractsAddresses.bridges.bscRsk.bscSide.bridge,
-      this
+      this,
+      "bsc"
     );
     this.bridgeRskBscBScSideFederation = new General(
       "Bridge BSC-RSK, BSC SIDE Federation",
       this.contractsAddresses.bridges.bscRsk.bscSide.federation,
-      this
+      this,
+      "bsc"
     );
     this.bridgeRskBscBScSideMultisig = new General(
       "Bridge BSC-RSK, BSC SIDE MultiSig",
       this.contractsAddresses.bridges.bscRsk.bscSide.multisig,
-      this
+      this,
+      "bsc"
     );
     this.bridgeRskBscBScSideAllowToken = new General(
       "Bridge BSC-RSK, BSC SIDE Allow Tokens",
       this.contractsAddresses.bridges.bscRsk.bscSide.allowToken,
-      this
+      this,
+      "bsc"
     );
     this.bridgeRskBscBScSideWbnb = new General(
       "Bridge BSC-RSK, BSC SIDE WBNB",
       this.contractsAddresses.bridges.bscRsk.bscSide.wbnb,
-      this
+      this,
+      "bsc"
     );
     this.bridgeRskBscBScSideBSov = new General(
       "Bridge BSC-RSK, BSC SIDE BSov",
       this.contractsAddresses.bridges.bscRsk.bscSide.bsov,
-      this
+      this,
+      "bsc"
     );
     ///
     this.bridgeRskBSCRskSideBridge = new General(
@@ -1259,32 +1283,38 @@ class GovernanceData {
     this.PerpetualManagerProxy = new General(
       "Perpetual Manager Proxy",
       this.contractsAddresses.PrepetualFutures.PerpetualManagerProxy,
-      this
+      this,
+      "bsc"
     );
     this.RbtcPaymaster = new General(
       "Rbtc Paymaster",
       this.contractsAddresses.PrepetualFutures.RbtcPaymaster,
-      this
+      this,
+      "bsc"
     );
     this.LimitOrderBookFactory = new General(
       "Limit Order Book Factory",
       this.contractsAddresses.PrepetualFutures.LimitOrderBookFactory,
-      this
+      this,
+      "bsc"
     );
     this.BTCUSDOracle = new General(
       "BTC-USD Oracle",
       this.contractsAddresses.PrepetualFutures.BTCUSDOracle,
-      this
+      this,
+      "bsc"
     );
     this.BTCUSDOrderbook = new General(
       "BTC-USD Order Book",
       this.contractsAddresses.PrepetualFutures.BTCUSDOrderbook,
-      this
+      this,
+      "bsc"
     );
     this.marginTokenAddr = new General(
       "Margin Token Address",
       this.contractsAddresses.PrepetualFutures.marginTokenAddr,
-      this
+      this,
+      "bsc"
     );
     //
     this.zero_activePool = new General(
@@ -1464,27 +1494,32 @@ class GovernanceData {
     this.BabelFisBscDevMassetProxy = new General(
       "Babel-Fis Bsc-Dev Masset Proxy",
       this.contractsAddresses.BabelFisBscDev.MassetProxy,
-      this
+      this,
+      "bsc"
     );
     this.BabelFisBscDevMasset = new General(
       "Babel-Fis Bsc-Dev Masset",
       this.contractsAddresses.BabelFisBscDev.Masset,
-      this
+      this,
+      "bsc"
     );
     this.BabelFisBscDevToken = new General(
       "Babel-Fis Bsc-Dev Token",
       this.contractsAddresses.BabelFisBscDev.Token,
-      this
+      this,
+      "bsc"
     );
     this.BabelFisBscDevBasketManager = new General(
       "Babel-Fis Bsc-Dev Basket Manager",
       this.contractsAddresses.BabelFisBscDev.BasketManager,
-      this
+      this,
+      "bsc"
     );
     this.BabelFisBscDevmigrations = new General(
       "Babel-Fis Bsc-Dev Migrations",
       this.contractsAddresses.BabelFisBscDev.migrations,
-      this
+      this,
+      "bsc"
     );
   }
 

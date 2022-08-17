@@ -341,4 +341,27 @@ const MainnetAddresses: ContractsAddresses = {
   },
 };
 
+/*
+0: (2) ['0x2493b92b3b958c8d1e93899cae00bfc4854cbd18', 'ETH'] - done
+1: (2) ['0x8DF20c2c85Bee0c3DA250dA96D892598C70aA1bE', 'ETH'] - done
+2: (2) ['0xd412acd34a832a09c80c8a4895ff46d733f09538', 'ETH'] - done
+3: (2) ['0xbdab72602e9ad40fc6a6852caf43258113b8f7a5', 'ETH'] - done
+4: (2) ['0xdfc7127593c8af1a17146893f10e08528f4c2aa7', 'BSC'] - done
+5: (2) ['0xfc321356bb2ca3d68fafe9515c24c9b23b63a6a6', 'BSC'] - done
+6: (2) ['0x05b68e70168e876b2025f837bc8e0b2312d5327d', 'BSC'] - done
+7: (2) ['0xB6C313a427fa911A4C9a119e80Feea0fe20E69F0', 'BSC'] - done
+8: (2) ['0x8753ede1b3a36358e4d7780f384f3f7a2d9e4359', 'BSC'] - done
+9: (2) ['0x86f586dc122d31E7654f89eb566B779C3D843e22', 'BSC'] - done
+10: (2) ['0xd537EB00E053Fc97A58f22b2FB6f064Bd4C10cCA', 'BSC'] - done
+11: (2) ['0x71509E41985BA05f5f86661F1b5e4c10337f03E3', 'BSC'] - done
+12: (2) ['0x37E551b23f982f1b21f668413a4EEfADaAA7e6BC', 'BSC'] - done
+13: (2) ['0x3ee8dAe27Feb809BD51eEdda749c3C2f1851e492', 'BSC'] - done
+14: (2) ['0x6a7F2d2e5D5756729e875c8F8fC254448E763Fdf', 'BSC'] - done
+15: (2) ['0x1da3d286a3abeadb2b7677c99730d725af58e39d', 'BSC'] - done
+16: (2) ['0x77657f38d46548778296071dab8a0a601d390c20', 'BSC'] - done
+17: (2) ['0x6a7f2d2e5d5756729e875c8f8fc254448e763fdf', 'BSC'] - done
+18: (2) ['0x152E8D16f7fF6F9BDA5d989CC2daA514f427a9BB', 'BSC'] - done
+19: (2) ['0x1506E6A9fa9E805566490280eEC79cd54cF30F89', 'BSC'] - done
+*/
+
 export default MainnetAddresses;

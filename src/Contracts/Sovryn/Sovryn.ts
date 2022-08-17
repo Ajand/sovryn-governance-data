@@ -19,7 +19,9 @@ class Sovryn {
   protocolSettings: State;
   loanSettings: State;
   loanOpenings: State;
-  loanClosings: State;
+  loanClosingsLiquidation: State;
+  loanClosingsRollover: State;
+  loanClosingsWith: State;
   loanMaintenance: State;
   protocolMigration: State;
   swapsExternal: State;
@@ -87,14 +89,34 @@ class Sovryn {
       "setDelegatedManager(bytes32,address,bool)"
     );
 
-    this.loanClosings = singleInputStateCreator(
+    this.loanClosingsLiquidation = singleInputStateCreator(
       (state: State) => {
-        this.loanClosings = state;
+        this.loanClosingsLiquidation = state;
         this.governanceData.change();
       },
       "getTarget",
-      "Loan Closings",
+      "LoanClosingsLiquidation",
       "liquidate(bytes32,address,uint256)"
+    );
+
+    this.loanClosingsRollover = singleInputStateCreator(
+      (state: State) => {
+        this.loanClosingsLiquidation = state;
+        this.governanceData.change();
+      },
+      "getTarget",
+      "LoanClosingsRollover",
+      "rollover(bytes32,bytes)"
+    );
+
+    this.loanClosingsWith = singleInputStateCreator(
+      (state: State) => {
+        this.loanClosingsLiquidation = state;
+        this.governanceData.change();
+      },
+      "getTarget",
+      "LoanClosingsWith",
+      "closeWithSwap(bytes32,address,uint256,bool,bytes)"
     );
 
     this.loanMaintenance = singleInputStateCreator(
@@ -144,11 +166,12 @@ class Sovryn {
       this.protocolSettings,
       this.loanSettings,
       this.loanOpenings,
-      this.loanClosings,
-      this.loanMaintenance,
+      this.loanClosingsLiquidation,
+      this.loanClosingsRollover,
+      this.loanClosingsWith,
       this.protocolMigration,
       this.swapsExternal,
-      this.affiliateModule
+      this.affiliateModule,
     ];
   }
 }

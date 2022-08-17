@@ -13,22 +13,32 @@ class General {
 
   address: string;
   contractName: string;
+  chain: string;
   governor: State;
 
   constructor(
     contractName: string,
     address: string,
-    governanceData: GovernanceData
+    governanceData: GovernanceData,
+    chain: string | undefined = "rsk"
   ) {
     this.localStorage = governanceData.localStorage;
     this.contractName = contractName;
     this.address = address;
     this.governanceData = governanceData;
-    this.contract = new ethers.Contract(
-      address,
-      abi,
-      this.governanceData.provider
-    );
+    this.chain = chain;
+
+    let provider;
+
+    if (chain === "eth") {
+      provider = this.governanceData.ethProvider;
+    } else if (chain === "bsc") {
+      provider = this.governanceData.bscProvider;
+    } else {
+      provider = this.governanceData.provider;
+    }
+
+    this.contract = new ethers.Contract(address, abi, provider);
     const singleSimpleStateCreator = SingleSimpleState(
       this.localStorage,
       this.contract

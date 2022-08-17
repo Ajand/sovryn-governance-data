@@ -15,6 +15,8 @@ interface TokenList {
   ETH: Token;
   BNBS: Token;
   SOV: Token;
+  FISH: Token;
+  MYNT: Token;
 }
 
 export { Token, TokenList };

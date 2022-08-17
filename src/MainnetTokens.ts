@@ -51,6 +51,16 @@ const MainnetTokens: TokenList = {
     name: "Sovryn Token",
     symbol: "SOV",
   },
+  FISH: {
+    address: "0x055a902303746382Fbb7D18f6aE0df56EFDC5213",
+    name: "Babelfish",
+    symbol: "FISH",
+  },
+  MYNT: {
+    address: "0x2e6b1d146064613e8f521eb3c6e65070af964ebb",
+    name: "Sovryn Mynt",
+    symbol: "MYNT",
+  },
 };
 
 export default MainnetTokens;
